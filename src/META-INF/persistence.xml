@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="PersistenceMysql" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <validation-mode>CALLBACK</validation-mode>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/trc_test?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.password" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="eclipselink.ddl-generation" value="create-tables"/>
+    </properties>
+  </persistence-unit>
+  <persistence-unit name="PersistenceDB2" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>ERP_PC.PcAuction</class>
+    <class>ERP_PC.PcAuctionType</class>
+    <class>ERP_PC.PcInsure</class>
+    <class>ERP_PC.PcInsureKind</class>
+    <class>ERP_PC.PcInsureType</class>
+    <class>ERP_PC.PcOrder</class>
+    <class>ERP_PS.VPsPerson</class>
+    <class>Entity.ERP_AC.AcAccount</class>
+    <class>Entity.ERP_AC.AcCounter</class>
+    <class>Entity.ERP_AC.AcCreditCardType</class>
+    <class>Entity.ERP_AC.AcDonateMember</class>
+    <class>Entity.ERP_AC.AcDonateMemberAccount</class>
+    <class>Entity.ERP_AC.AcDonateMemberRequest</class>
+    <class>Entity.ERP_FI.FiCapital</class>
+    <class>Entity.ERP_FI.FiCapitalFounder</class>
+    <class>Entity.ERP_FI.FiFund</class>
+    <class>Entity.ERP_SH.FwSequenceGenerator</class>
+    <class>Entity.ERP_SH.ShAddress</class>
+    <class>Entity.ERP_SH.ShBank</class>
+    <class>Entity.ERP_SH.ShBankBranch</class>
+    <class>Entity.ERP_SH.ShDepartment</class>
+    <class>Entity.ERP_SH.ShEnterprise</class>
+    <class>Entity.ERP_SH.ShFormRunning</class>
+    <class>Entity.ERP_SH.ShFormType</class>
+    <class>Entity.ERP_SH.ShMember</class>
+    <class>Entity.ERP_SH.ShMemberCard</class>
+    <class>Entity.ERP_SH.ShMemberCardType</class>
+    <class>Entity.ERP_SH.ShMemberType</class>
+    <class>Entity.ERP_SH.ShPerson</class>
+    <class>Entity.ERP_SH.ShPersonDoc</class>
+    <class>Entity.ERP_SH.ShPlan</class>
+    <class>Entity.ERP_SH.ShSource</class>
+    <class>Entity.ERP_SH.ShSourceChart</class>
+    <class>Entity.ERP_SH.ShSubAccount</class>
+    <class>Entity.ERP_SH.ShSystem</class>
+    <class>Entity.ERP_SH.ShTitle</class>
+    <class>Entity.ERP_SH.VShRegion</class>
+    <class>Entity.ERP_SH.VShSupplier</class>
+    <class>Entity.Sys.Sqlprimarykeys</class>
+    <!--<exclude-unlisted-classes>true</exclude-unlisted-classes>-->
+
+<!--    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:db2://192.168.8.10:50000/TRC_LPA:currentSchema=ERP_APP;"/>
+      <property name="javax.persistence." value=""/>
+      <property name="javax.persistence.jdbc.password" value="@Trc#9681"/>
+      <property name="javax.persistence.jdbc.driver" value="com.ibm.db2.jcc.DB2Driver"/>
+      <property name="javax.persistence.jdbc.user" value="db2inst1"/>
+    </properties>-->
+  </persistence-unit>
+</persistence>

@@ -1,0 +1,1818 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x000000006abb8746, pid=6744, tid=4308
+#
+# JRE version: Java(TM) SE Runtime Environment (7.0_45-b18) (build 1.7.0_45-b18)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (24.45-b08 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# V  [jvm.dll+0x1e8746]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000010336000):  JavaThread "Thread-5" [_thread_in_vm, id=4308, stack(0x0000000011760000,0x0000000011860000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x000000000000000a
+
+Registers:
+RAX=0x0000000000000000, RBX=0x000000001185ec40, RCX=0x000000001185ec40, RDX=0x0000000000000028
+RSP=0x000000001185e980, RBP=0x000000001185ed19, RSI=0x0000000010336000, RDI=0x0000000000000000
+R8 =0x0000000000000000, R9 =0x0000000000000006, R10=0x000000077efaadf8, R11=0x00000007d6899f50
+R12=0x0000000000000000, R13=0x000000000f5e9e30, R14=0x0000000010157090, R15=0x00000000000000b6
+RIP=0x000000006abb8746, EFLAGS=0x0000000000010206
+
+Top of Stack: (sp=0x000000001185e980)
+0x000000001185e980:   000000001185eca8 0000000010336000
+0x000000001185e990:   000000001185eb20 000000000f338098
+0x000000001185e9a0:   000000000000000e 00000000d6899e18
+0x000000001185e9b0:   00000000020df880 000000006abf6d17
+0x000000001185e9c0:   000000001185eca8 0000000000000000
+0x000000001185e9d0:   000000001185eca8 0000000010336000
+0x000000001185e9e0:   000000001185eb20 0000000000000000
+0x000000001185e9f0:   0000000000000000 00000000000b325f
+0x000000001185ea00:   0000000000000004 000000001185ea08
+0x000000001185ea10:   000000077d909889 000000001185ea98
+0x000000001185ea20:   000000077d90c018 000000006ab6d23d
+0x000000001185ea30:   0000000000000000 0000000000000000
+0x000000001185ea40:   0000000000000000 0000000000000000
+0x000000001185ea50:   000000000f3380a8 000000006ab566ad
+0x000000001185ea60:   000000000f3380a0 000000000f3380a0
+0x000000001185ea70:   00000000c0000005 0000000000000000 
+
+Instructions: (pc=0x000000006abb8746)
+0x000000006abb8726:   01 00 00 48 8b 05 b0 41 54 00 48 33 c4 48 89 84
+0x000000006abb8736:   24 30 01 00 00 4c 63 41 10 48 8b 41 08 48 8b d9
+0x000000006abb8746:   42 38 54 00 0a 74 33 44 0f be c2 48 8d 4c 24 20
+0x000000006abb8756:   48 8d 15 93 85 3a 00 e8 8e 54 e3 ff 48 8d 0d 27 
+
+
+Register to memory mapping:
+
+RAX=0x0000000000000000 is an unknown value
+RBX=0x000000001185ec40 is pointing into the stack for thread: 0x0000000010336000
+RCX=0x000000001185ec40 is pointing into the stack for thread: 0x0000000010336000
+RDX=0x0000000000000028 is an unknown value
+RSP=0x000000001185e980 is pointing into the stack for thread: 0x0000000010336000
+RBP=0x000000001185ed19 is pointing into the stack for thread: 0x0000000010336000
+RSI=0x0000000010336000 is a thread
+RDI=0x0000000000000000 is an unknown value
+R8 =0x0000000000000000 is an unknown value
+R9 =0x0000000000000006 is an unknown value
+R10=0x000000077efaadf8 is an oop
+{constant pool} 
+ - klass: {other class}
+ - holder: 0x000000077de67c70
+ - cache: 0x000000077efaddc0
+ -   1 :  : 'Import/ImportDonation' {0x7de67c70}
+ -   2 :  : klass_index=77 name_and_type_index=690
+ -   3 :  : klass_index=1 name_and_type_index=691
+ -   4 :  : klass_index=1 name_and_type_index=692
+ -   5 :  : klass_index=1 name_and_type_index=693
+ -   6 :  : "FI140" {0xa19f88b0}
+ -   7 :  : klass_index=695 name_and_type_index=696
+ -   8 :  : klass_index=697 name_and_type_index=698
+ -   9 :  : klass_index=1 name_and_type_index=699
+ -  10 :  : "RD" {0xd689a0b8}
+ -  11 :  : "FI130" {0xa19f8878}
+ -  12 :  : klass_index=1 name_and_type_index=702
+ -  13 :  : "RM" {0xd689a0e8}
+ -  14 :  : 'java/lang/StringBuffer' {0x7c882f40}
+ -  15 :  : klass_index=14 name_and_type_index=705
+ -  16 :  : klass_index=1 name_and_type_index=706
+ -  17 :  : klass_index=1 name_and_type_index=707
+ -  18 :  : klass_index=708 name_and_type_index=709
+ -  19 :  : klass_index=710 name_and_type_index=711
+ -  20 :  : 'java/lang/StringBuilder' {0x7c888d60}
+ -  21 :  : klass_index=20 name_and_type_index=705
+ -  22 :  : "#'*-A'5H " {0xa579cab0}
+ -  23 :  : klass_index=20 name_and_type_index=714
+ -  24 :  : klass_index=20 name_and_type_index=715
+ -  25 :  : klass_index=20 name_and_type_index=716
+ -  26 :  : klass_index=1 name_and_type_index=717
+ -  27 :  : klass_index=1 name_and_type_index=718
+ -  28 :  : klass_index=719 name_and_type_index=720
+ -  29 :  : klass_index=719 name_and_type_index=721
+ -  30 :  : klass_index=1 name_and_type_index=722
+ -  31 :  : klass_index=1 name_and_type_index=723
+ -  32 :  : 'java/lang/NullPointerException' {0x7c8a5818}
+ -  33 :  : klass_index=32 name_and_type_index=705
+ -  34 :  : 'java/lang/IllegalArgumentException'
+ -  35 :  : " D!H [#0@ 0@5"]" {0xd689a118}
+ -  36 :  : klass_index=14 name_and_type_index=727
+ -  37 :  : klass_index=728 name_and_type_index=729
+ -  38 :  : klass_index=1 name_and_type_index=730
+ -  39 :  : klass_index=148 name_and_type_index=731
+ -  40 :  : " #+1*+H'"2I-D!H@4 2 +%1 " {0xa579ca48}
+ -  41 :  : klass_index=1 name_and_type_index=733
+ -  42 :  : klass_index=1 name_and_type_index=734
+ -  43 :  : klass_index=1 name_and_type_index=735
+ -  44 :  : klass_index=1 name_and_type_index=736
+ -  45 :  : klass_index=148 name_and_type_index=737
+ -  46 :  : "D" {0x822cf178}
+ -  47 :  : klass_index=148 name_and_type_index=739
+ -  48 :  : "C" {0x822bb960}
+ -  49 :  : "B" {0x822cf1a8}
+ -  50 :  : "M" {0x822bb9f0}
+ -  51 :  : klass_index=1 name_and_type_index=743
+ -  52 :  : klass_index=1 name_and_type_index=744
+ -  53 :  : klass_index=1 name_and_type_index=745
+ -  54 :  : klass_index=1 name_and_type_index=746
+ -  55 :  : klass_index=14 name_and_type_index=731
+ -  56 :  : "   Warning : " {0xd6845468}
+ -  57 :  : klass_index=14 name_and_type_index=716
+ -  58 :  : "
+" {0x81f9f318}
+ -  59 :  : klass_index=1 name_and_type_index=749
+ -  60 :  : klass_index=750 name_and_type_index=751
+ -  61 :  : "   Error : " {0xa59c7af0}
+ -  62 :  : klass_index=1 name_and_type_index=753
+ -  63 :  : "   *3@#G
+" {0xa59c7ab0}
+ -  64 :  : "ROW " {0xa59c7a80}
+ -  65 :  : klass_index=14 name_and_type_index=756
+ -  66 :  : klass_index=1 name_and_type_index=757
+ -  67 :  : klass_index=758 name_and_type_index=759
+ -  68 :  : klass_index=1 name_and_type_index=760
+ -  69 :  : klass_index=708 name_and_type_index=761
+ -  70 :  : 'Entity/ERP_SH/ShPerson' {0x7e72d980}
+ -  71 :  : klass_index=70 name_and_type_index=705
+ -  72 :  : klass_index=1 name_and_type_index=763
+ -  73 :  : klass_index=728 name_and_type_index=764
+ -  74 :  : klass_index=1 name_and_type_index=765
+ -  75 :  : klass_index=70 name_and_type_index=766
+ -  76 :  : klass_index=70 name_and_type_index=767
+ -  77 :  : 'Import/ImportData'
+ -  78 :  : "P" {0x822bb930}
+ -  79 :  : klass_index=70 name_and_type_index=770
+ -  80 :  : klass_index=695 name_and_type_index=771
+ -  81 :  : klass_index=772 name_and_type_index=773
+ -  82 :  : klass_index=70 name_and_type_index=774
+ -  83 :  : klass_index=70 name_and_type_index=775
+ -  84 :  : klass_index=70 name_and_type_index=776
+ -  85 :  : klass_index=70 name_and_type_index=777
+ -  86 :  : klass_index=70 name_and_type_index=778
+ -  87 :  : klass_index=70 name_and_type_index=779
+ -  88 :  : klass_index=70 name_and_type_index=780
+ -  89 :  : klass_index=70 name_and_type_index=781
+ -  90 :  : klass_index=70 name_and_type_index=782
+ -  91 :  : klass_index=70 name_and_type_index=783
+ -  92 :  : klass_index=784 name_and_type_index=785
+ -  93 :  : klass_index=784 name_and_type_index=786
+ -  94 :  : klass_index=70 name_and_type_index=787
+ -  95 :  : "N" {0x822bb9c0}
+ -  96 :  : klass_index=1 name_and_type_index=789
+ -  97 :  : klass_index=70 name_and_type_index=790
+ -  98 :  : klass_index=70 name_and_type_index=791
+ -  99 :  : klass_index=70 name_and_type_index=792
+ - 100 :  : klass_index=70 name_and_type_index=793
+ - 101 :  : klass_index=1 name_and_type_index=794
+ - 102 :  : klass_index=70 name_and_type_index=795
+ - 103 :  : "##" {0x8929b5c0}
+ - 104 :  : klass_index=1 name_and_type_index=797
+ - 105 :  : klass_index=1 name_and_type_index=798
+ - 106 :  : klass_index=70 name_and_type_index=799
+ - 107 :  : klass_index=70 name_and_type_index=800
+ - 108 :  : klass_index=70 name_and_type_index=801
+ - 109 :  : klass_index=70 name_and_type_index=802
+ - 110 :  : klass_index=70 name_and_type_index=803
+ - 111 :  : klass_index=1 name_and_type_index=804
+ - 112 :  : klass_index=70 name_and_type_index=805
+ - 113 :  : klass_index=1 name_and_type_index=806
+ - 114 :  : klass_index=70 name_and_type_index=807
+ - 115 :  : "CONVERT-JAVA" {0x822cf0a8}
+ - 116 :  : klass_index=70 name_and_type_index=809
+ - 117 :  : klass_index=70 name_and_type_index=810
+ - 118 :  : klass_index=70 name_and_type_index=811
+ - 119 :  : klass_index=70 name_and_type_index=812
+ - 120 :  : klass_index=70 name_and_type_index=813
+ - 121 :  : klass_index=695 name_and_type_index=814
+ - 122 :  : 'java/util/ArrayList' {0x7c9013c8}
+ - 123 :  : klass_index=122 name_and_type_index=705
+ - 124 :  : " " {0x822cf208}
+ - 125 :  : klass_index=1 name_and_type_index=817
+ - 126 :  : klass_index=1 name_and_type_index=818
+ - 127 :  : klass_index=148 name_and_type_index=819
+ - 128 :  : klass_index=1 name_and_type_index=820
+ - 129 :  : 'Entity/ERP_SH/ShAddress' {0x7e7a3d78}
+ - 130 :  : klass_index=129 name_and_type_index=705
+ - 131 :  : klass_index=70 name_and_type_index=822
+ - 132 :  : klass_index=129 name_and_type_index=766
+ - 133 :  : klass_index=70 name_and_type_index=823
+ - 134 :  : klass_index=129 name_and_type_index=824
+ - 135 :  : "R" {0x822cf0e8}
+ - 136 :  : klass_index=129 name_and_type_index=826
+ - 137 :  : klass_index=129 name_and_type_index=827
+ - 138 :  : klass_index=129 name_and_type_index=828
+ - 139 :  : klass_index=129 name_and_type_index=829
+ - 140 :  : klass_index=129 name_and_type_index=830
+ - 141 :  : klass_index=695 name_and_type_index=831
+ - 142 :  : klass_index=832 name_and_type_index=833
+ - 143 :  : klass_index=129 name_and_type_index=834
+ - 144 :  : " [D!H!5 " {0xa57916a8}
+ - 145 :  : klass_index=1 name_and_type_index=836
+ - 146 :  : 575655
+ - 147 :  : klass_index=837 name_and_type_index=838
+ - 148 :  : 'java/lang/String' {0x7c80afe8}
+ - 149 :  : " C2I-!9%" {0xa5791588}
+ - 150 :  : " ] " {0xa5791678}
+ - 151 :  : klass_index=129 name_and_type_index=842
+ - 152 :  : klass_index=129 name_and_type_index=843
+ - 153 :  : klass_index=129 name_and_type_index=844
+ - 154 :  : klass_index=129 name_and_type_index=845
+ - 155 :  : klass_index=129 name_and_type_index=846
+ - 156 :  : klass_index=129 name_and_type_index=802
+ - 157 :  : klass_index=129 name_and_type_index=803
+ - 158 :  : klass_index=129 name_and_type_index=805
+ - 159 :  : klass_index=129 name_and_type_index=809
+ - 160 :  : klass_index=129 name_and_type_index=807
+ - 161 :  : klass_index=129 name_and_type_index=810
+ - 162 :  : klass_index=129 name_and_type_index=812
+ - 163 :  : klass_index=129 name_and_type_index=811
+ - 164 :  : klass_index=129 name_and_type_index=813
+ - 165 :  : 'Entity/ERP_AC/AcDonateMember' {0x7e747a80}
+ - 166 :  : klass_index=165 name_and_type_index=705
+ - 167 :  : klass_index=165 name_and_type_index=766
+ - 168 :  : klass_index=165 name_and_type_index=848
+ - 169 :  : klass_index=1 name_and_type_index=849
+ - 170 :  : klass_index=148 name_and_type_index=850
+ - 171 :  : klass_index=1 name_and_type_index=851
+ - 172 :  : " D!H!5 " {0xa5791640}
+ - 173 :  : "5#0!2 [" {0xd689a170}
+ - 174 :  : klass_index=165 name_and_type_index=854
+ - 175 :  : klass_index=165 name_and_type_index=855
+ - 176 :  : klass_index=165 name_and_type_index=824
+ - 177 :  : klass_index=148 name_and_type_index=856
+ - 178 :  : klass_index=165 name_and_type_index=857
+ - 179 :  : 'java/lang/Exception' {0x7c824ac8}
+ - 180 :  : klass_index=165 name_and_type_index=859
+ - 181 :  : klass_index=1 name_and_type_index=860
+ - 182 :  : klass_index=165 name_and_type_index=861
+ - 183 :  : klass_index=695 name_and_type_index=862
+ - 184 :  : klass_index=863 name_and_type_index=864
+ - 185 :  : klass_index=165 name_and_type_index=865
+ - 186 :  : klass_index=695 name_and_type_index=866
+ - 187 :  : klass_index=867 name_and_type_index=868
+ - 188 :  : klass_index=165 name_and_type_index=869
+ - 189 :  : klass_index=165 name_and_type_index=870
+ - 190 :  : klass_index=165 name_and_type_index=871
+ - 191 :  : klass_index=165 name_and_type_index=872
+ - 192 :  : klass_index=165 name_and_type_index=873
+ - 193 :  : klass_index=1 name_and_type_index=874
+ - 194 :  : klass_index=165 name_and_type_index=875
+ - 195 :  : klass_index=1 name_and_type_index=876
+ - 196 :  : klass_index=165 name_and_type_index=877
+ - 197 :  : klass_index=165 name_and_type_index=878
+ - 198 :  : klass_index=695 name_and_type_index=879
+ - 199 :  : klass_index=880 name_and_type_index=881
+ - 200 :  : klass_index=165 name_and_type_index=882
+ - 201 :  : klass_index=165 name_and_type_index=883
+ - 202 :  : klass_index=165 name_and_type_index=884
+ - 203 :  : klass_index=165 name_and_type_index=885
+ - 204 :  : klass_index=165 name_and_type_index=802
+ - 205 :  : klass_index=165 name_and_type_index=803
+ - 206 :  : klass_index=1 name_and_type_index=886
+ - 207 :  : klass_index=1 name_and_type_index=887
+ - 208 :  : klass_index=165 name_and_type_index=888
+ - 209 :  : klass_index=165 name_and_type_index=805
+ - 210 :  : klass_index=165 name_and_type_index=809
+ - 211 :  : klass_index=165 name_and_type_index=807
+ - 212 :  : klass_index=165 name_and_type_index=810
+ - 213 :  : klass_index=165 name_and_type_index=812
+ - 214 :  : klass_index=165 name_and_type_index=811
+ - 215 :  : klass_index=165 name_and_type_index=813
+ - 216 :  : klass_index=1 name_and_type_index=889
+ - 217 :  : klass_index=165 name_and_type_index=890
+ - 218 :  : " [Gen DonateMemberNo 4%2] " {0xa59c7a18}
+ - 219 :  : 'Entity/ERP_AC/AcDonateMemberAccount'
+ - 220 :  : klass_index=219 name_and_type_index=705
+ - 221 :  : klass_index=219 name_and_type_index=766
+ - 222 :  : klass_index=165 name_and_type_index=893
+ - 223 :  : klass_index=219 name_and_type_index=894
+ - 224 :  : klass_index=1 name_and_type_index=895
+ - 225 :  : klass_index=219 name_and_type_index=896
+ - 226 :  : klass_index=219 name_and_type_index=848
+ - 227 :  : klass_index=1 name_and_type_index=897
+ - 228 :  : klass_index=219 name_and_type_index=898
+ - 229 :  : klass_index=1 name_and_type_index=899
+ - 230 :  : klass_index=219 name_and_type_index=900
+ - 231 :  : klass_index=1 name_and_type_index=901
+ - 232 :  : klass_index=219 name_and_type_index=902
+ - 233 :  : klass_index=219 name_and_type_index=802
+ - 234 :  : klass_index=219 name_and_type_index=803
+ - 235 :  : klass_index=219 name_and_type_index=805
+ - 236 :  : klass_index=219 name_and_type_index=807
+ - 237 :  : klass_index=219 name_and_type_index=809
+ - 238 :  : klass_index=219 name_and_type_index=810
+ - 239 :  : klass_index=219 name_and_type_index=812
+ - 240 :  : klass_index=219 name_and_type_index=811
+ - 241 :  : klass_index=219 name_and_type_index=813
+ - 242 :  : 'Entity/ERP_SH/ShMember'
+ - 243 :  : klass_index=242 name_and_type_index=705
+ - 244 :  : klass_index=242 name_and_type_index=766
+ - 245 :  : klass_index=242 name_and_type_index=824
+ - 246 :  : klass_index=1 name_and_type_index=904
+ - 247 :  : klass_index=242 name_and_type_index=905
+ - 248 :  : " [Gen MemberNo 4%2] " {0xd689a1b0}
+ - 249 :  : klass_index=695 name_and_type_index=907
+ - 250 :  : klass_index=242 name_and_type_index=908
+ - 251 :  : klass_index=242 name_and_type_index=909
+ - 252 :  : "A" {0x822cf1d8}
+ - 253 :  : klass_index=242 name_and_type_index=911
+ - 254 :  : klass_index=242 name_and_type_index=912
+ - 255 :  : klass_index=242 name_and_type_index=913
+ - 256 :  : klass_index=1 name_and_type_index=914
+ - 257 :  : klass_index=242 name_and_type_index=915
+ - 258 :  : klass_index=242 name_and_type_index=916
+ - 259 :  : klass_index=242 name_and_type_index=848
+ - 260 :  : klass_index=242 name_and_type_index=917
+ - 261 :  : klass_index=918 name_and_type_index=919
+ - 262 :  : klass_index=242 name_and_type_index=920
+ - 263 :  : klass_index=242 name_and_type_index=921
+ - 264 :  : klass_index=242 name_and_type_index=922
+ - 265 :  : klass_index=242 name_and_type_index=923
+ - 266 :  : klass_index=242 name_and_type_index=924
+ - 267 :  : klass_index=242 name_and_type_index=925
+ - 268 :  : klass_index=242 name_and_type_index=875
+ - 269 :  : klass_index=242 name_and_type_index=802
+ - 270 :  : klass_index=242 name_and_type_index=803
+ - 271 :  : klass_index=242 name_and_type_index=805
+ - 272 :  : klass_index=242 name_and_type_index=807
+ - 273 :  : klass_index=242 name_and_type_index=809
+ - 274 :  : klass_index=242 name_and_type_index=810
+ - 275 :  : klass_index=242 name_and_type_index=812
+ - 276 :  : klass_index=242 name_and_type_index=811
+ - 277 :  : klass_index=242 name_and_type_index=813
+ - 278 :  : klass_index=1 name_and_type_index=926
+ - 279 :  : "00" {0xa19f83c8}
+ - 280 :  : klass_index=1 name_and_type_index=928
+ - 281 :  : klass_index=1 name_and_type_index=929
+ - 282 :  : 'Entity/ERP_SH/ShMemberCard'
+ - 283 :  : klass_index=282 name_and_type_index=705
+ - 284 :  : klass_index=282 name_and_type_index=766
+ - 285 :  : klass_index=282 name_and_type_index=931
+ - 286 :  : klass_index=282 name_and_type_index=932
+ - 287 :  : klass_index=282 name_and_type_index=802
+ - 288 :  : klass_index=282 name_and_type_index=803
+ - 289 :  : klass_index=282 name_and_type_index=805
+ - 290 :  : klass_index=282 name_and_type_index=807
+ - 291 :  : klass_index=282 name_and_type_index=809
+ - 292 :  : klass_index=282 name_and_type_index=810
+ - 293 :  : klass_index=282 name_and_type_index=812
+ - 294 :  : klass_index=282 name_and_type_index=811
+ - 295 :  : klass_index=282 name_and_type_index=813
+ - 296 :  : klass_index=1 name_and_type_index=933
+ - 297 :  : 'Entity/ERP_SH/ShPersonDoc'
+ - 298 :  : klass_index=297 name_and_type_index=705
+ - 299 :  : klass_index=297 name_and_type_index=766
+ - 300 :  : klass_index=297 name_and_type_index=935
+ - 301 :  : klass_index=297 name_and_type_index=936
+ - 302 :  : klass_index=937 name_and_type_index=938
+ - 303 :  : klass_index=937 name_and_type_index=721
+ - 304 :  : klass_index=297 name_and_type_index=939
+ - 305 :  : klass_index=297 name_and_type_index=940
+ - 306 :  : klass_index=297 name_and_type_index=941
+ - 307 :  : klass_index=297 name_and_type_index=942
+ - 308 :  : klass_index=297 name_and_type_index=802
+ - 309 :  : klass_index=297 name_and_type_index=803
+ - 310 :  : klass_index=297 name_and_type_index=805
+ - 311 :  : klass_index=297 name_and_type_index=809
+ - 312 :  : klass_index=297 name_and_type_index=807
+ - 313 :  : klass_index=297 name_and_type_index=810
+ - 314 :  : klass_index=297 name_and_type_index=812
+ - 315 :  : klass_index=297 name_and_type_index=811
+ - 316 :  : klass_index=297 name_and_type_index=813
+ - 317 :  : "C@*#G " {0xa19f8840}
+ - 318 :  : "/" {0x822c08e8}
+ - 319 :  : " '15H " {0xa19f8808}
+ - 320 :  : "" {0x82294170}
+ - 321 :  : " 9I#42#H'! " {0xa19f87c0}
+ - 322 :  : 'java/util/HashMap'
+ - 323 :  : klass_index=322 name_and_type_index=705
+ - 324 :  : klass_index=1 name_and_type_index=949
+ - 325 :  : "#0@ 0@5" " {0xa2260330}
+ - 326 :  : klass_index=837 name_and_type_index=951
+ - 327 :  : "#0@ *!2
+4 " {0xa22602c8}
+ - 328 :  : "33+I2 " {0xa2260268}
+ - 329 :  : "
+7H-1' (D") " {0xa2260200}
+ - 330 :  : "
+7H-%2 " {0xa22601a0}
+ - 331 :  : "2!*8% " {0xa2260148}
+ - 332 :  : "
+7H-1' (-1$)) " {0xa22600d8}
+ - 333 :  : "
+7H-%2 (-1$)) " {0xa2260068}
+ - 334 :  : "2!*8% (-1$)) " {0xa225fff8}
+ - 335 :  : "
+7H-@%H " {0xa225ff98}
+ - 336 :  : "@-#LB# " {0xa225ff38}
+ - 337 :  : "@-#LAL " {0xa225fed8}
+ - 338 :  : "@-*2##2
+2# " {0xa225fe70}
+ - 339 :  : "--B" " {0xa225fe18}
+ - 340 :  : "@%5H " {0xa225fdc0}
+ - 341 :  : "'15H+!-2"8 " {0xa225fd58}
+ - 342 :  : "@( " {0xa225fca0}
+ - 343 :  : "'1@7-5@4 " {0xa225fcf0}
+ - 344 :  : "
+7H-5H1I/-22#/*25H  " {0xa225f4f0}
+ - 345 :  : "
+1I5H/+I-5H " {0xa225f570}
+ - 346 :  : "I2@%5H " {0xa225fa30}
+ - 347 :  : "+!9H5H " {0xa225f9d8}
+ - 348 :  : "#+1*1+'1/-3@ -/3% " {0xa225f370}
+ - 349 :  : " " {0xa225f3e8}
+ - 350 :  : "/-" " {0xa225f8e0}
+ - 351 :  : "1+'1 " {0xa225f498}
+ - 352 :  : "-3@ - " {0xa225f180}
+ - 353 :  : "3% " {0xa225f1d8}
+ - 354 :  : "#+1*D#)5"L " {0xa225f230}
+ - 355 :  : "#0@( " {0xa225f318}
+ - 356 :  : "@-#LB#*25H " {0xa225efd8}
+ - 357 :  : "2!5H-"9H22# " {0xa225fab0}
+ - 358 :  : "
+7H-5H1I/-22#/*25H " {0xa225f958}
+ - 359 :  : "3!225H-"9H22# " {0xa225f688}
+ - 360 :  : "
+7H-9I#1@-*2# " {0xa225f790}
+ - 361 :  : "3!22
+7H-8% " {0xa225f720}
+ - 362 :  : "I2 " {0xa225f5d8}
+ - 363 :  : "null " {0xa225f630}
+ - 364 :  : "#-/-" " {0xa225f438}
+ - 365 :  : "3%/-3@ -/1+'1 " {0xa225f2a8}
+ - 366 :  : "5H-"9H " {0xa225f040}
+ - 367 :  : "3'@45HC
+I*44 " {0xa225f098}
+ - 368 :  : "C@*#G#1@4%'15H " {0xa225f108}
+ - 369 :  : "C@*#G#1@4@%H!5H " {0xa225eda8}
+ - 370 :  : "C@*#G#1@4@%5H " {0xa225ed30}
+ - 371 :  : "'18#0*L2##42 " {0xa225ecb8}
+ - 372 :  : "#+1**!2
+4 " {0xa225ec58}
+ - 373 :  : "'16I0@5" " {0xa225ef70}
+ - 374 :  : "22#9I--1# " {0xa225ef00}
+ - 375 :  : "#0@ 1#@#4 " {0xa225ee90}
+ - 376 :  : "@%5H1#@#4 " {0xa225ee20}
+ - 377 :  : "
+7H-9I7-1#@#4 " {0xa225ea20}
+ - 378 :  : "55H1#+!-2"8 " {0xa225e9b0}
+ - 379 :  : "@7-5H1#+!-2"8 " {0xa225e940}
+ - 380 :  : "22#9IH2"@4 " {0xa225e8d0}
+ - 381 :  : "*229IH2"@4 " {0xa225ebf0}
+ - 382 :  : "@%5H1
+5@42 " {0xa225eb80}
+ - 383 :  : "
+7H-1
+5@42 " {0xa225eb10}
+ - 384 :  : "3'@4+1AH%0@7- " {0xa225ea98}
+ - 385 :  : "1"-8'15H (-@7-) " {0xa225e6b8}
+ - 386 :  : "#+1*1
+5  " {0xa225e738}
+ - 387 :  : "#+1*+H'"2 " {0xa225e5d0}
+ - 388 :  : "#+1*A2/B#2#/4##! " {0xa225e638}
+ - 389 :  : "#+1*A+%H@4  " {0xa225e800}
+ - 390 :  : "#+1*1
+5"H-"  " {0xa225e868}
+ - 391 :  : "#+1*+H'"2  " {0xa225e798}
+ - 392 :  : "SH_PERSON" {0xa19f8718}
+ - 393 :  : "PERSON_ID" {0xa19f8758}
+ - 394 :  : "SH_ADDRESS" {0xa19f85c8}
+ - 395 :  : "ADDRESS_ID" {0xa19f8608}
+ - 396 :  : "AC_DONATE_MEMBER" {0xa19f8668}
+ - 397 :  : "DONATE_MEMBER_ID" {0xa19f86b0}
+ - 398 :  : 'START_ROW_DONAION'
+ - 399 :  : 'I'
+ - 400 :  : 'ConstantValue'
+ - 401 :  : 5
+ - 402 :  : 'DEPARTMENT_CODE'
+ - 403 :  : 'Ljava/lang/String;'
+ - 404 :  : 'rowCount'
+ - 405 :  : 'mode'
+ - 406 :  : 'FORM_TYPE_CODE_DONATOR'
+ - 407 :  : 'FORM_TYPE_CODE_MEMBER'
+ - 408 :  : 'COMBINE2'
+ - 409 :  : 'prefixAddition'
+ - 410 :  : '[Ljava/lang/String;'
+ - 411 :  : 'PREFIX_LETTER_DONATOR'
+ - 412 :  : 'mapTableId'
+ - 413 :  : 'Ljava/util/Map;'
+ - 414 :  : 'Signature'
+ - 415 :  : 'Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;'
+ - 416 :  : 'subBudgetYear'
+ - 417 :  : 'PREFIX_LETTER_MEMBER'
+ - 418 :  : '<init>'
+ - 419 :  : '()V'
+ - 420 :  : 'Code'
+ - 421 :  : 'LineNumberTable'
+ - 422 :  : 'LocalVariableTable'
+ - 423 :  : 'this'
+ - 424 :  : 'LImport/ImportDonation;'
+ - 425 :  : 'formType'
+ - 426 :  : 'LEntity/ERP_SH/ShFormType;'
+ - 427 :  : 'StackMapTable'
+ - 428 :  : 'Import/ImportDonation'
+ - 429 :  : 'Entity/ERP_SH/ShFormType'
+ - 430 :  : 'threadProcess'
+ - 431 :  : '(Lorg/apache/poi/xssf/usermodel/XSSFSheet;II)V'
+ - 432 :  : 'receiveType'
+ - 433 :  : 'LEntity/Enum/ReceiveType;'
+ - 434 :  : 'iEx'
+ - 435 :  : 'Ljava/lang/RuntimeException;'
+ - 436 :  : 'nullEx'
+ - 437 :  : 'Ljava/lang/NullPointerException;'
+ - 438 :  : 'donateMember'
+ - 439 :  : 'LEntity/ERP_AC/AcDonateMember;'
+ - 440 :  : 'member'
+ - 441 :  : 'LEntity/ERP_SH/ShMember;'
+ - 442 :  : 'sheet'
+ - 443 :  : 'Lorg/apache/poi/xssf/usermodel/XSSFSheet;'
+ - 444 :  : 'index'
+ - 445 :  : 'lastRowNum'
+ - 446 :  : 'row'
+ - 447 :  : 'Lorg/apache/poi/xssf/usermodel/XSSFRow;'
+ - 448 :  : 'cell0'
+ - 449 :  : 'Lorg/apache/poi/xssf/usermodel/XSSFCell;'
+ - 450 :  : 'cell86'
+ - 451 :  : 'person'
+ - 452 :  : 'LEntity/ERP_SH/ShPerson;'
+ - 453 :  : 'org/apache/poi/xssf/usermodel/XSSFRow'
+ - 454 :  : 'org/apache/poi/xssf/usermodel/XSSFCell'
+ - 455 :  : 'java/lang/RuntimeException'
+ - 456 :  : 'java/lang/NullPointerException'
+ - 457 :  : 'Entity/ERP_SH/ShPerson'
+ - 458 :  : 'java/lang/String'
+ - 459 :  : 'org.netbeans.SourceLevelAnnotations'
+ - 460 :  : 'Ljava/lang/Override;'
+ - 461 :  : 'setError'
+ - 462 :  : 'validation'
+ - 463 :  : 'Ljava/lang/StringBuffer;'
+ - 464 :  : 'error'
+ - 465 :  : 'warning'
+ - 466 :  : 'java/lang/StringBuffer'
+ - 467 :  : 'getSheetRowCount'
+ - 468 :  : '(Lorg/apache/poi/xssf/usermodel/XSSFSheet;)I'
+ - 469 :  : 'cell'
+ - 470 :  : 'i'
+ - 471 :  : 'count'
+ - 472 :  : 'addPerson'
+ - 473 :  : '(Lorg/apache/poi/xssf/usermodel/XSSFRow;)LEntity/ERP_SH/ShPerson;'
+ - 474 :  : 'title'
+ - 475 :  : 'LEntity/ERP_SH/ShTitle;'
+ - 476 :  : 'sexType'
+ - 477 :  : 'LEntity/Enum/SexType;'
+ - 478 :  : 'e'
+ - 479 :  : 'departmentId'
+ - 480 :  : 'Ljava/lang/Integer;'
+ - 481 :  : 'cell2'
+ - 482 :  : 'titleName'
+ - 483 :  : 'cell3'
+ - 484 :  : 'firstNameThai'
+ - 485 :  : 'cell4'
+ - 486 :  : 'middleNameThai'
+ - 487 :  : 'cell5'
+ - 488 :  : 'lastNameThai'
+ - 489 :  : 'cell6'
+ - 490 :  : 'firstNameEng'
+ - 491 :  : 'cell7'
+ - 492 :  : 'middleNameEng'
+ - 493 :  : 'cell8'
+ - 494 :  : 'lastNameEng'
+ - 495 :  : 'cell9'
+ - 496 :  : 'nickName'
+ - 497 :  : 'cell10'
+ - 498 :  : 'Phone'
+ - 499 :  : 'cell11'
+ - 500 :  : 'fax'
+ - 501 :  : 'cell16'
+ - 502 :  : 'sex'
+ - 503 :  : 'cell17'
+ - 504 :  : 'birthDate'
+ - 505 :  : 'Ljava/util/Date;'
+ - 506 :  : 'shipRecipient'
+ - 507 :  : 'cell48'
+ - 508 :  : 'addressName'
+ - 509 :  : 'cell49'
+ - 510 :  : 'addressLocation'
+ - 511 :  : 'cell50'
+ - 512 :  : 'addressNo'
+ - 513 :  : 'cell51'
+ - 514 :  : 'addressMoo'
+ - 515 :  : 'cell53'
+ - 516 :  : 'addressStreet'
+ - 517 :  : 'cell54'
+ - 518 :  : 'addressSoi'
+ - 519 :  : 'address1'
+ - 520 :  : 'cell55'
+ - 521 :  : 'province'
+ - 522 :  : 'cell56'
+ - 523 :  : 'amphoe'
+ - 524 :  : 'cell57'
+ - 525 :  : 'tumbon'
+ - 526 :  : 'address2'
+ - 527 :  : 'cell58'
+ - 528 :  : 'postCode'
+ - 529 :  : 'cell59'
+ - 530 :  : 'country'
+ - 531 :  : 'address3'
+ - 532 :  : 'java/lang/Integer'
+ - 533 :  : 'Entity/ERP_SH/ShTitle'
+ - 534 :  : 'getShipAddress'
+ - 535 :  : '(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;'
+ - 536 :  : 'stringList'
+ - 537 :  : 'Ljava/util/List;'
+ - 538 :  : 'LocalVariableTypeTable'
+ - 539 :  : 'Ljava/util/List<Ljava/lang/String;>;'
+ - 540 :  : 'getShipRecipient'
+ - 541 :  : '(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;'
+ - 542 :  : 'firstName'
+ - 543 :  : 'middleName'
+ - 544 :  : 'lastName'
+ - 545 :  : 'getAddition'
+ - 546 :  : '(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;'
+ - 547 :  : 'bookNo'
+ - 548 :  : 'receipt'
+ - 549 :  : 'oldDonateDate'
+ - 550 :  : 'objective'
+ - 551 :  : 'donateName'
+ - 552 :  : 'addition'
+ - 553 :  : 'Ljava/lang/StringBuilder;'
+ - 554 :  : 'java/lang/StringBuilder'
+ - 555 :  : 'addAddress'
+ - 556 :  : '(Lorg/apache/poi/xssf/usermodel/XSSFRow;LEntity/ERP_SH/ShPerson;)LEntity/ERP_SH/ShAddress;'
+ - 557 :  : 'region'
+ - 558 :  : 'LEntity/ERP_SH/VShRegion;'
+ - 559 :  : 'address'
+ - 560 :  : 'LEntity/ERP_SH/ShAddress;'
+ - 561 :  : 'addressName1'
+ - 562 :  : 'addressLocation1'
+ - 563 :  : 'addressNo1'
+ - 564 :  : 'moo1'
+ - 565 :  : 'street1'
+ - 566 :  : 'soi1'
+ - 567 :  : 'postCode1'
+ - 568 :  : 'cell60'
+ - 569 :  : 'phone1'
+ - 570 :  : 'regionFullName'
+ - 571 :  : 'Entity/ERP_SH/ShAddress'
+ - 572 :  : 'Entity/ERP_SH/VShRegion'
+ - 573 :  : 'AddDoanteMember'
+ - 574 :  : '(Lorg/apache/poi/xssf/usermodel/XSSFRow;LEntity/ERP_SH/ShPerson;)LEntity/ERP_AC/AcDonateMember;'
+ - 575 :  : 'Ljava/lang/Exception;'
+ - 576 :  : 'bank'
+ - 577 :  : 'LEntity/ERP_SH/ShBank;'
+ - 578 :  : 'CreditCardType'
+ - 579 :  : 'LEntity/ERP_AC/AcCreditCardType;'
+ - 580 :  : 'cell69'
+ - 581 :  : 'bankName'
+ - 582 :  : 'cell70'
+ - 583 :  : 'creditCardType'
+ - 584 :  : 'cell71'
+ - 585 :  : 'creditCardNo'
+ - 586 :  : 'cell72'
+ - 587 :  : 'creditCardName'
+ - 588 :  : 'cell73'
+ - 589 :  : 'creditCardExpYear'
+ - 590 :  : 'cell74'
+ - 591 :  : 'creditCardExpMonth'
+ - 592 :  : 'cell79'
+ - 593 :  : 'amount'
+ - 594 :  : 'Ljava/math/BigDecimal;'
+ - 595 :  : 'cell80'
+ - 596 :  : 'offDate'
+ - 597 :  : 'bankDao'
+ - 598 :  : 'bankBranch'
+ - 599 :  : 'LEntity/ERP_SH/ShBankBranch;'
+ - 600 :  : 'cell75'
+ - 601 :  : 'bankId'
+ - 602 :  : 'cell76'
+ - 603 :  : 'bankBranchName'
+ - 604 :  : 'cell77'
+ - 605 :  : 'bankAccount'
+ - 606 :  : 'cell78'
+ - 607 :  : 'bankAccountName'
+ - 608 :  : 'donateMemberNo'
+ - 609 :  : 'cell63'
+ - 610 :  : 'budgetYear'
+ - 611 :  : 'cell66'
+ - 612 :  : 'purPose'
+ - 613 :  : 'cell62'
+ - 614 :  : 'oldAmount'
+ - 615 :  : 'cell64'
+ - 616 :  : 'cell65'
+ - 617 :  : 'cell61'
+ - 618 :  : 'Entity/ERP_AC/AcDonateMember'
+ - 619 :  : 'java/util/Date'
+ - 620 :  : 'java/lang/Exception'
+ - 621 :  : 'java/math/BigDecimal'
+ - 622 :  : 'Entity/ERP_SH/ShBank'
+ - 623 :  : 'Entity/ERP_AC/AcCreditCardType'
+ - 624 :  : 'Entity/ERP_SH/ShBankBranch'
+ - 625 :  : 'AddDoanteMemberAccount'
+ - 626 :  : '(Lorg/apache/poi/xssf/usermodel/XSSFRow;LEntity/ERP_SH/ShPerson;LEntity/ERP_AC/AcDonateMember;)LEntity/ERP_AC/AcDonateMemberAccount;'
+ - 627 :  : 'donateMemberAccount'
+ - 628 :  : 'LEntity/ERP_AC/AcDonateMemberAccount;'
+ - 629 :  : 'cell81'
+ - 630 :  : 'accountFullCode'
+ - 631 :  : 'accountId'
+ - 632 :  : 'cell82'
+ - 633 :  : 'departmentFullCode'
+ - 634 :  : 'cell83'
+ - 635 :  : 'planFullCode'
+ - 636 :  : 'planId'
+ - 637 :  : 'cell84'
+ - 638 :  : 'sourceFullCode'
+ - 639 :  : 'sourceId'
+ - 640 :  : 'cell85'
+ - 641 :  : 'subAccountFullCode'
+ - 642 :  : 'subAccountId'
+ - 643 :  : 'AddMember'
+ - 644 :  : '(Lorg/apache/poi/xssf/usermodel/XSSFRow;LEntity/ERP_SH/ShPerson;)LEntity/ERP_SH/ShMember;'
+ - 645 :  : 'memberNo'
+ - 646 :  : 'cell1'
+ - 647 :  : 'memberTypeName'
+ - 648 :  : 'findShMemberTypeByName'
+ - 649 :  : 'LEntity/ERP_SH/ShMemberType;'
+ - 650 :  : 'cell68'
+ - 651 :  : 'actorData'
+ - 652 :  : 'cell67'
+ - 653 :  : 'pruPose'
+ - 654 :  : 'Entity/ERP_SH/ShMember'
+ - 655 :  : 'getFormDonatorNo'
+ - 656 :  : '(Ljava/lang/Integer;Ljava/lang/String;)Ljava/lang/String;'
+ - 657 :  : 'newSeqNo'
+ - 658 :  : 'formRunning'
+ - 659 :  : 'combine3'
+ - 660 :  : 'Exceptions'
+ - 661 :  : 'getFormMemberNo'
+ - 662 :  : 'validatAddAddress'
+ - 663 :  : '(Lorg/apache/poi/xssf/usermodel/XSSFRow;)Z'
+ - 664 :  : 'start'
+ - 665 :  : 'end'
+ - 666 :  : 'AddMemberCard'
+ - 667 :  : '(Lorg/apache/poi/xssf/usermodel/XSSFRow;LEntity/ERP_SH/ShPerson;LEntity/ERP_SH/ShMember;)LEntity/ERP_SH/ShMemberCard;'
+ - 668 :  : 'memberCard'
+ - 669 :  : 'LEntity/ERP_SH/ShMemberCard;'
+ - 670 :  : 'memberCardNo'
+ - 671 :  : 'addPersonDoc'
+ - 672 :  : '(Lorg/apache/poi/xssf/usermodel/XSSFRow;LEntity/ERP_SH/ShPerson;)V'
+ - 673 :  : 'docType'
+ - 674 :  : 'LEntity/Enum/DocType;'
+ - 675 :  : 'cell14'
+ - 676 :  : 'docNo'
+ - 677 :  : 'personDoc'
+ - 678 :  : 'LEntity/ERP_SH/ShPersonDoc;'
+ - 679 :  : 'cell12'
+ - 680 :  : 'docName'
+ - 681 :  : 'cell13'
+ - 682 :  : 'issuer'
+ - 683 :  : 'cell15'
+ - 684 :  : 'expireDate'
+ - 685 :  : 'Entity/ERP_SH/ShPersonDoc'
+ - 686 :  : '<clinit>'
+ - 687 :  : 'SourceFile'
+ - 688 :  : 'ImportDonation.java'
+ - 689 :  : 'Import/ImportDonation'
+ - 690 :  : name_index=418 signature_index=1035
+ - 691 :  : name_index=402 signature_index=403
+ - 692 :  : name_index=404 signature_index=399
+ - 693 :  : name_index=1036 signature_index=1037
+ - 694 :  : 'FI140'
+ - 695 :  : 'service/DAO' {0x7de77cb0}
+ - 696 :  : name_index=1039 signature_index=1040
+ - 697 :  : 'Entity/ERP_SH/ShFormType'
+ - 698 :  : name_index=1041 signature_index=1042
+ - 699 :  : name_index=411 signature_index=403
+ - 700 :  : 'RD'
+ - 701 :  : 'FI130'
+ - 702 :  : name_index=417 signature_index=403
+ - 703 :  : 'RM'
+ - 704 :  : 'java/lang/StringBuffer'
+ - 705 :  : name_index=418 signature_index=419
+ - 706 :  : name_index=1043 signature_index=463
+ - 707 :  : name_index=1044 signature_index=463
+ - 708 :  : 'org/apache/poi/xssf/usermodel/XSSFSheet' {0x7d6d6bb8}
+ - 709 :  : name_index=1046 signature_index=1047
+ - 710 :  : 'org/apache/poi/xssf/usermodel/XSSFRow' {0x7ddd7f50}
+ - 711 :  : name_index=1048 signature_index=1049
+ - 712 :  : 'java/lang/StringBuilder'
+ - 713 :  : 'ตรวจสอบแถวที่ '
+ - 714 :  : name_index=1050 signature_index=1051
+ - 715 :  : name_index=1050 signature_index=1052
+ - 716 :  : name_index=1053 signature_index=1042
+ - 717 :  : name_index=1054 signature_index=1055
+ - 718 :  : name_index=1056 signature_index=1057
+ - 719 :  : 'Entity/Enum/ReceiveType' {0x7ee9bb20}
+ - 720 :  : name_index=1059 signature_index=1060
+ - 721 :  : name_index=1061 signature_index=1042
+ - 722 :  : name_index=405 signature_index=403
+ - 723 :  : name_index=1062 signature_index=1063
+ - 724 :  : 'java/lang/NullPointerException'
+ - 725 :  : 'java/lang/IllegalArgumentException'
+ - 726 :  : ' ไม่พบ [ประเภททะเบียน]'
+ - 727 :  : name_index=1050 signature_index=1064
+ - 728 :  : 'java/lang/Integer' {0x7c8a0e38}
+ - 729 :  : name_index=1059 signature_index=1065
+ - 730 :  : name_index=1066 signature_index=1067
+ - 731 :  : name_index=1068 signature_index=1069
+ - 732 :  : ' รหัสหน่วยงานต้องไม่เกิน 2 หลัก '
+ - 733 :  : name_index=461 signature_index=419
+ - 734 :  : name_index=472 signature_index=473
+ - 735 :  : name_index=671 signature_index=672
+ - 736 :  : name_index=555 signature_index=556
+ - 737 :  : name_index=1070 signature_index=1069
+ - 738 :  : 'D'
+ - 739 :  : name_index=1071 signature_index=1072
+ - 740 :  : 'C'
+ - 741 :  : 'B'
+ - 742 :  : 'M'
+ - 743 :  : name_index=573 signature_index=574
+ - 744 :  : name_index=625 signature_index=626
+ - 745 :  : name_index=643 signature_index=644
+ - 746 :  : name_index=666 signature_index=667
+ - 747 :  : '   Warning : '
+ - 748 :  : '
+'
+ - 749 :  : name_index=1073 signature_index=1074
+ - 750 :  : 'javax/swing/JTextArea' {0x7cb111c0}
+ - 751 :  : name_index=1050 signature_index=1055
+ - 752 :  : '   Error : '
+ - 753 :  : name_index=1076 signature_index=1077
+ - 754 :  : '   สำเร็จ
+'
+ - 755 :  : 'ROW '
+ - 756 :  : name_index=1050 signature_index=1078
+ - 757 :  : name_index=1079 signature_index=537
+ - 758 :  : 'java/util/List' {0x7c8baec8}
+ - 759 :  : name_index=1081 signature_index=1072
+ - 760 :  : name_index=1082 signature_index=1077
+ - 761 :  : name_index=1083 signature_index=1069
+ - 762 :  : 'Entity/ERP_SH/ShPerson'
+ - 763 :  : name_index=1084 signature_index=1085
+ - 764 :  : name_index=1086 signature_index=1069
+ - 765 :  : name_index=1087 signature_index=1088
+ - 766 :  : name_index=1089 signature_index=1090
+ - 767 :  : name_index=1091 signature_index=1055
+ - 768 :  : 'Import/ImportData'
+ - 769 :  : 'P'
+ - 770 :  : name_index=1092 signature_index=1055
+ - 771 :  : name_index=1093 signature_index=1094
+ - 772 :  : 'Entity/ERP_SH/ShTitle' {0x7e754b20}
+ - 773 :  : name_index=1095 signature_index=1096
+ - 774 :  : name_index=1097 signature_index=1090
+ - 775 :  : name_index=1098 signature_index=1055
+ - 776 :  : name_index=1099 signature_index=1055
+ - 777 :  : name_index=1100 signature_index=1055
+ - 778 :  : name_index=1101 signature_index=1055
+ - 779 :  : name_index=1102 signature_index=1055
+ - 780 :  : name_index=1103 signature_index=1055
+ - 781 :  : name_index=1104 signature_index=1055
+ - 782 :  : name_index=1105 signature_index=1055
+ - 783 :  : name_index=1106 signature_index=1055
+ - 784 :  : 'Entity/Enum/SexType' {0x7eeae168}
+ - 785 :  : name_index=1059 signature_index=1108
+ - 786 :  : name_index=1109 signature_index=1042
+ - 787 :  : name_index=1110 signature_index=1055
+ - 788 :  : 'N'
+ - 789 :  : name_index=1111 signature_index=1112
+ - 790 :  : name_index=1113 signature_index=1114
+ - 791 :  : name_index=1115 signature_index=1055
+ - 792 :  : name_index=1116 signature_index=1055
+ - 793 :  : name_index=1117 signature_index=1055
+ - 794 :  : name_index=540 signature_index=541
+ - 795 :  : name_index=1118 signature_index=1055
+ - 796 :  : '##'
+ - 797 :  : name_index=1119 signature_index=1120
+ - 798 :  : name_index=534 signature_index=535
+ - 799 :  : name_index=1121 signature_index=1055
+ - 800 :  : name_index=1122 signature_index=1055
+ - 801 :  : name_index=1123 signature_index=1055
+ - 802 :  : name_index=1124 signature_index=1055
+ - 803 :  : name_index=1125 signature_index=1055
+ - 804 :  : name_index=1126 signature_index=505
+ - 805 :  : name_index=1127 signature_index=1114
+ - 806 :  : name_index=1128 signature_index=403
+ - 807 :  : name_index=1129 signature_index=1055
+ - 808 :  : 'CONVERT-JAVA'
+ - 809 :  : name_index=1130 signature_index=1055
+ - 810 :  : name_index=1131 signature_index=1114
+ - 811 :  : name_index=1132 signature_index=1055
+ - 812 :  : name_index=1133 signature_index=1055
+ - 813 :  : name_index=1134 signature_index=1035
+ - 814 :  : name_index=1135 signature_index=1136
+ - 815 :  : 'java/util/ArrayList'
+ - 816 :  : ' '
+ - 817 :  : name_index=1137 signature_index=1138
+ - 818 :  : name_index=409 signature_index=410
+ - 819 :  : name_index=1139 signature_index=1042
+ - 820 :  : name_index=662 signature_index=663
+ - 821 :  : 'Entity/ERP_SH/ShAddress'
+ - 822 :  : name_index=1140 signature_index=1096
+ - 823 :  : name_index=1141 signature_index=1096
+ - 824 :  : name_index=1142 signature_index=1090
+ - 825 :  : 'R'
+ - 826 :  : name_index=1143 signature_index=1055
+ - 827 :  : name_index=1144 signature_index=1055
+ - 828 :  : name_index=1145 signature_index=1055
+ - 829 :  : name_index=1146 signature_index=1055
+ - 830 :  : name_index=1147 signature_index=1055
+ - 831 :  : name_index=1148 signature_index=1149
+ - 832 :  : 'Entity/ERP_SH/VShRegion' {0x7e7917c8}
+ - 833 :  : name_index=1150 signature_index=1069
+ - 834 :  : name_index=1151 signature_index=1090
+ - 835 :  : ' [ไม่มี '
+ - 836 :  : name_index=1152 signature_index=413
+ - 837 :  : 'java/util/Map' {0x7c83f788}
+ - 838 :  : name_index=1154 signature_index=1155
+ - 839 :  : 'java/lang/String'
+ - 840 :  : ' ในฐานข้อมูล'
+ - 841 :  : ' ] '
+ - 842 :  : name_index=1156 signature_index=1055
+ - 843 :  : name_index=1157 signature_index=1055
+ - 844 :  : name_index=1158 signature_index=1055
+ - 845 :  : name_index=1159 signature_index=1055
+ - 846 :  : name_index=1160 signature_index=1055
+ - 847 :  : 'Entity/ERP_AC/AcDonateMember'
+ - 848 :  : name_index=1161 signature_index=1090
+ - 849 :  : name_index=1162 signature_index=1163
+ - 850 :  : name_index=1164 signature_index=1165
+ - 851 :  : name_index=416 signature_index=403
+ - 852 :  : ' ไม่มี '
+ - 853 :  : 'ปีงบประมาณ ['
+ - 854 :  : name_index=1166 signature_index=1055
+ - 855 :  : name_index=1167 signature_index=1114
+ - 856 :  : name_index=1164 signature_index=1168
+ - 857 :  : name_index=1169 signature_index=1055
+ - 858 :  : 'java/lang/Exception'
+ - 859 :  : name_index=1170 signature_index=1055
+ - 860 :  : name_index=1171 signature_index=1172
+ - 861 :  : name_index=1173 signature_index=1174
+ - 862 :  : name_index=1175 signature_index=1176
+ - 863 :  : 'Entity/ERP_SH/ShBank'
+ - 864 :  : name_index=1177 signature_index=1096
+ - 865 :  : name_index=1178 signature_index=1090
+ - 866 :  : name_index=1179 signature_index=1180
+ - 867 :  : 'Entity/ERP_AC/AcCreditCardType'
+ - 868 :  : name_index=1181 signature_index=1096
+ - 869 :  : name_index=1182 signature_index=1090
+ - 870 :  : name_index=1183 signature_index=1055
+ - 871 :  : name_index=1184 signature_index=1055
+ - 872 :  : name_index=1185 signature_index=1055
+ - 873 :  : name_index=1186 signature_index=1055
+ - 874 :  : name_index=1187 signature_index=1188
+ - 875 :  : name_index=1189 signature_index=1174
+ - 876 :  : name_index=1190 signature_index=1191
+ - 877 :  : name_index=1192 signature_index=1090
+ - 878 :  : name_index=1193 signature_index=1090
+ - 879 :  : name_index=1194 signature_index=1195
+ - 880 :  : 'Entity/ERP_SH/ShBankBranch'
+ - 881 :  : name_index=1196 signature_index=1096
+ - 882 :  : name_index=1197 signature_index=1090
+ - 883 :  : name_index=1198 signature_index=1055
+ - 884 :  : name_index=1199 signature_index=1055
+ - 885 :  : name_index=1200 signature_index=1114
+ - 886 :  : name_index=1201 signature_index=1163
+ - 887 :  : name_index=545 signature_index=546
+ - 888 :  : name_index=1202 signature_index=1055
+ - 889 :  : name_index=655 signature_index=656
+ - 890 :  : name_index=1203 signature_index=1055
+ - 891 :  : ' [Gen DonateMemberNo ผิดพลาด] '
+ - 892 :  : 'Entity/ERP_AC/AcDonateMemberAccount'
+ - 893 :  : name_index=1204 signature_index=1096
+ - 894 :  : name_index=1205 signature_index=1090
+ - 895 :  : name_index=1206 signature_index=1085
+ - 896 :  : name_index=1207 signature_index=1090
+ - 897 :  : name_index=1208 signature_index=1085
+ - 898 :  : name_index=1209 signature_index=1090
+ - 899 :  : name_index=1210 signature_index=1085
+ - 900 :  : name_index=1211 signature_index=1090
+ - 901 :  : name_index=1212 signature_index=1213
+ - 902 :  : name_index=1214 signature_index=1090
+ - 903 :  : 'Entity/ERP_SH/ShMember'
+ - 904 :  : name_index=661 signature_index=656
+ - 905 :  : name_index=1215 signature_index=1055
+ - 906 :  : ' [Gen MemberNo ผิดพลาด] '
+ - 907 :  : name_index=648 signature_index=1216
+ - 908 :  : name_index=1217 signature_index=1218
+ - 909 :  : name_index=1219 signature_index=1090
+ - 910 :  : 'A'
+ - 911 :  : name_index=1220 signature_index=1055
+ - 912 :  : name_index=1221 signature_index=1090
+ - 913 :  : name_index=1222 signature_index=1055
+ - 914 :  : name_index=1223 signature_index=1224
+ - 915 :  : name_index=1225 signature_index=1114
+ - 916 :  : name_index=1226 signature_index=1090
+ - 917 :  : name_index=1227 signature_index=1114
+ - 918 :  : 'java/math/BigDecimal'
+ - 919 :  : name_index=1228 signature_index=594
+ - 920 :  : name_index=1229 signature_index=1174
+ - 921 :  : name_index=1230 signature_index=1174
+ - 922 :  : name_index=1231 signature_index=1114
+ - 923 :  : name_index=1232 signature_index=1090
+ - 924 :  : name_index=1233 signature_index=1090
+ - 925 :  : name_index=1234 signature_index=1055
+ - 926 :  : name_index=1235 signature_index=1236
+ - 927 :  : '00'
+ - 928 :  : name_index=1237 signature_index=1238
+ - 929 :  : name_index=1239 signature_index=1240
+ - 930 :  : 'Entity/ERP_SH/ShMemberCard'
+ - 931 :  : name_index=1241 signature_index=1055
+ - 932 :  : name_index=1242 signature_index=1243
+ - 933 :  : name_index=1244 signature_index=1057
+ - 934 :  : 'Entity/ERP_SH/ShPersonDoc'
+ - 935 :  : name_index=1142 signature_index=1245
+ - 936 :  : name_index=1246 signature_index=1090
+ - 937 :  : 'Entity/Enum/DocType'
+ - 938 :  : name_index=1059 signature_index=1248
+ - 939 :  : name_index=1249 signature_index=1055
+ - 940 :  : name_index=1250 signature_index=1055
+ - 941 :  : name_index=1251 signature_index=1055
+ - 942 :  : name_index=1252 signature_index=1114
+ - 943 :  : 'ใบเสร็จ '
+ - 944 :  : '/'
+ - 945 :  : ' วันที่ '
+ - 946 :  : ''
+ - 947 :  : ' ผู้บริจาคร่วม '
+ - 948 :  : 'java/util/HashMap'
+ - 949 :  : name_index=412 signature_index=413
+ - 950 :  : 'ประเภททะเบียน '
+ - 951 :  : name_index=1253 signature_index=1254
+ - 952 :  : 'ประเภทสมาชิก '
+ - 953 :  : 'คำนำหน้า '
+ - 954 :  : 'ชื่อตัว (ไทย) '
+ - 955 :  : 'ชื่อกลาง '
+ - 956 :  : 'นามสกุล '
+ - 957 :  : 'ชื่อตัว (อังกฤษ) '
+ - 958 :  : 'ชื่อกลาง (อังกฤษ) '
+ - 959 :  : 'นามสกุล (อังกฤษ) '
+ - 960 :  : 'ชื่อเล่น '
+ - 961 :  : 'เบอร์โทร '
+ - 962 :  : 'เบอร์แฟกซ์ '
+ - 963 :  : 'เอกสารราชการ '
+ - 964 :  : 'ออกโดย '
+ - 965 :  : 'เลขที่ '
+ - 966 :  : 'วันที่หมดอายุ '
+ - 967 :  : 'เพศ '
+ - 968 :  : 'วันเดือนปีเกิด '
+ - 969 :  : 'ชื่อที่ตั้ง/อาคาร/สถานที่  '
+ - 970 :  : 'ชั้นที่/ห้องที่ '
+ - 971 :  : 'บ้านเลขที่ '
+ - 972 :  : 'หมู่ที่ '
+ - 973 :  : 'รหัสจังหวัด/อำเภอ/ตำบล '
+ - 974 :  : 'ถนน '
+ - 975 :  : '/ซอย '
+ - 976 :  : 'จังหวัด '
+ - 977 :  : 'อำเภอ '
+ - 978 :  : 'ตำบล '
+ - 979 :  : 'รหัสไปรษณีย์ '
+ - 980 :  : 'ประเทศ '
+ - 981 :  : 'เบอร์โทรสถานที่ '
+ - 982 :  : 'ตามที่อยู่ทางการ '
+ - 983 :  : 'ชื่อที่ตั้ง/อาคาร/สถานที่ '
+ - 984 :  : 'นำมาจากที่อยู่ทางการ '
+ - 985 :  : 'ชื่อผู้รับเอกสาร '
+ - 986 :  : 'นำมาจากชื่อบุคคล '
+ - 987 :  : 'บ้าน '
+ - 988 :  : 'null '
+ - 989 :  : 'ตรอก/ซอย '
+ - 990 :  : 'ตำบล/อำเภอ/จังหวัด '
+ - 991 :  : 'ที่อยู่ '
+ - 992 :  : 'จำวนเงินที่ใช้สิทธิ '
+ - 993 :  : 'ใบเสร็จรับเงินลงวันที่ '
+ - 994 :  : 'ใบเสร็จรับเงินเล่มที่ '
+ - 995 :  : 'ใบเสร็จรับเงินเลขที่ '
+ - 996 :  : 'วัตถุประสงค์การบริจาค '
+ - 997 :  : 'รหัสสมาชิก '
+ - 998 :  : 'วันขึ้นทะเบียน '
+ - 999 :  : 'ธนาคารผู้ออกบัตร '
+ - 1000 :  : 'ประเภทบัตรเครดิต '
+ - 1001 :  : 'เลขที่บัตรเครดิต '
+ - 1002 :  : 'ชื่อผู้ถือบัตรเครดิต '
+ - 1003 :  : 'ปีที่บัตรหมดอายุ '
+ - 1004 :  : 'เดือนที่บัตรหมดอายุ '
+ - 1005 :  : 'ธนาคารผู้จ่ายเงิน '
+ - 1006 :  : 'สาขาผู้จ่ายเงิน '
+ - 1007 :  : 'เลขที่บัญชีเงินฝาก '
+ - 1008 :  : 'ชื่อบัญชีเงินฝาก '
+ - 1009 :  : 'จำนวนเงินหักแต่ละเดือน '
+ - 1010 :  : 'ตัดยอดทุกวันที่ (ของเดือน) '
+ - 1011 :  : 'รหัสบัญชี  '
+ - 1012 :  : 'รหัสหน่วยงาน '
+ - 1013 :  : 'รหัสแผนงาน/โครงการ/กิจกรรม '
+ - 1014 :  : 'รหัสแหล่งเงิน  '
+ - 1015 :  : 'รหัสบัญชีย่อย  '
+ - 1016 :  : 'รหัสหน่วยงาน  '
+ - 1017 :  : 'SH_PERSON'
+ - 1018 :  : 'PERSON_ID'
+ - 1019 :  : 'SH_ADDRESS'
+ - 1020 :  : 'ADDRESS_ID'
+ - 1021 :  : 'AC_DONATE_MEMBER'
+ - 1022 :  : 'DONATE_MEMBER_ID'
+ - 1023 :  : 'Entity/ERP_SH/ShFormType'
+ - 1024 :  : 'org/apache/poi/xssf/usermodel/XSSFRow'
+ - 1025 :  : 'org/apache/poi/xssf/usermodel/XSSFCell'
+ - 1026 :  : 'java/lang/RuntimeException'
+ - 1027 :  : 'java/lang/Integer'
+ - 1028 :  : 'Entity/ERP_SH/ShTitle'
+ - 1029 :  : 'Entity/ERP_SH/VShRegion'
+ - 1030 :  : 'java/util/Date'
+ - 1031 :  : 'java/math/BigDecimal'
+ - 1032 :  : 'Entity/ERP_SH/ShBank'
+ - 1033 :  : 'Entity/ERP_AC/AcCreditCardType'
+ - 1034 :  : 'Entity/ERP_SH/ShBankBranch'
+ - 1035 :  : '(I)V'
+ - 1036 :  : 'dao'
+ - 1037 :  : 'Lservice/DAO;'
+ - 1038 :  : 'service/DAO'
+ - 1039 :  : 'findShFormTypeByFormTypeCode'
+ - 1040 :  : '(Ljava/lang/String;)LEntity/ERP_SH/ShFormType;'
+ - 1041 :  : 'getPrefixLetter'
+ - 1042 :  : '()Ljava/lang/String;'
+ - 1043 :  : 'validationError'
+ - 1044 :  : 'validationWarn'
+ - 1045 :  : 'org/apache/poi/xssf/usermodel/XSSFSheet'
+ - 1046 :  : 'getRow'
+ - 1047 :  : '(I)Lorg/apache/poi/xssf/usermodel/XSSFRow;'
+ - 1048 :  : 'getCell'
+ - 1049 :  : '(I)Lorg/apache/poi/xssf/usermodel/XSSFCell;'
+ - 1050 :  : 'append'
+ - 1051 :  : '(Ljava/lang/String;)Ljava/lang/StringBuilder;'
+ - 1052 :  : '(I)Ljava/lang/StringBuilder;'
+ - 1053 :  : 'toString'
+ - 1054 :  : 'logln'
+ - 1055 :  : '(Ljava/lang/String;)V'
+ - 1056 :  : 'getStringCellValueNoSetError'
+ - 1057 :  : '(Lorg/apache/poi/xssf/usermodel/XSSFCell;)Ljava/lang/String;'
+ - 1058 :  : 'Entity/Enum/ReceiveType'
+ - 1059 :  : 'valueOf'
+ - 1060 :  : '(Ljava/lang/String;)LEntity/Enum/ReceiveType;'
+ - 1061 :  : 'getType'
+ - 1062 :  : 'isBlankOrNull'
+ - 1063 :  : '(Ljava/lang/String;)Z'
+ - 1064 :  : '(Ljava/lang/String;)Ljava/lang/StringBuffer;'
+ - 1065 :  : '(I)Ljava/lang/Integer;'
+ - 1066 :  : 'getStringCellValueSetError'
+ - 1067 :  : '(Lorg/apache/poi/xssf/usermodel/XSSFCell;Ljava/lang/Integer;)Ljava/lang/String;'
+ - 1068 :  : 'length'
+ - 1069 :  : '()I'
+ - 1070 :  : 'hashCode'
+ - 1071 :  : 'equals'
+ - 1072 :  : '(Ljava/lang/Object;)Z'
+ - 1073 :  : 'log'
+ - 1074 :  : 'Ljavax/swing/JTextArea;'
+ - 1075 :  : 'javax/swing/JTextArea'
+ - 1076 :  : 'commit'
+ - 1077 :  : 'Z'
+ - 1078 :  : '(I)Ljava/lang/StringBuffer;'
+ - 1079 :  : 'validationErrorList'
+ - 1080 :  : 'java/util/List'
+ - 1081 :  : 'add'
+ - 1082 :  : 'IS_SUCCESS'
+ - 1083 :  : 'getLastRowNum'
+ - 1084 :  : 'getDepartmentId'
+ - 1085 :  : '(Ljava/lang/String;)Ljava/lang/Integer;'
+ - 1086 :  : 'intValue'
+ - 1087 :  : 'setErrorValue'
+ - 1088 :  : '(Ljava/lang/Object;Ljava/lang/String;)V'
+ - 1089 :  : 'setBusinessUnitId'
+ - 1090 :  : '(Ljava/lang/Integer;)V'
+ - 1091 :  : 'setTitleName'
+ - 1092 :  : 'setPersonType'
+ - 1093 :  : 'findTitleByTitleName'
+ - 1094 :  : '(Ljava/lang/String;)LEntity/ERP_SH/ShTitle;'
+ - 1095 :  : 'getTitleId'
+ - 1096 :  : '()Ljava/lang/Integer;'
+ - 1097 :  : 'setTitleId'
+ - 1098 :  : 'setFirstName'
+ - 1099 :  : 'setMiddleName'
+ - 1100 :  : 'setLastName'
+ - 1101 :  : 'setFirstNameEng'
+ - 1102 :  : 'setMiddleNameEng'
+ - 1103 :  : 'setLastNameEng'
+ - 1104 :  : 'setNickName'
+ - 1105 :  : 'setPhone'
+ - 1106 :  : 'setFax'
+ - 1107 :  : 'Entity/Enum/SexType'
+ - 1108 :  : '(Ljava/lang/String;)LEntity/Enum/SexType;'
+ - 1109 :  : 'getDescription'
+ - 1110 :  : 'setSex'
+ - 1111 :  : 'getDateCellValueNoSetError'
+ - 1112 :  : '(Lorg/apache/poi/xssf/usermodel/XSSFCell;)Ljava/util/Date;'
+ - 1113 :  : 'setBirthDate'
+ - 1114 :  : '(Ljava/util/Date;)V'
+ - 1115 :  : 'setResidentAddressSource'
+ - 1116 :  : 'setShipAddressSource'
+ - 1117 :  : 'setIsShipRecipientAuto'
+ - 1118 :  : 'setShipRecipient'
+ - 1119 :  : 'getStringFormatNoSetError'
+ - 1120 :  : '(Lorg/apache/poi/xssf/usermodel/XSSFCell;Ljava/lang/String;)Ljava/lang/String;'
+ - 1121 :  : 'setShipAddressLine1'
+ - 1122 :  : 'setShipAddressLine2'
+ - 1123 :  : 'setShipAddressLine3'
+ - 1124 :  : 'setIsCancel'
+ - 1125 :  : 'setIsLockUpdate'
+ - 1126 :  : 'NOW'
+ - 1127 :  : 'setCreateTime'
+ - 1128 :  : 'CREATE_PROG'
+ - 1129 :  : 'setCreateProg'
+ - 1130 :  : 'setCreateUserId'
+ - 1131 :  : 'setLastUpdTime'
+ - 1132 :  : 'setLastUpdProg'
+ - 1133 :  : 'setLastUpdUserId'
+ - 1134 :  : 'setLastUpdVersion'
+ - 1135 :  : 'addEntity'
+ - 1136 :  : '(Ljava/lang/Object;)V'
+ - 1137 :  : 'convertListToString'
+ - 1138 :  : '(Ljava/util/List;Ljava/lang/String;)Ljava/lang/String;'
+ - 1139 :  : 'trim'
+ - 1140 :  : 'getBusinessUnitId'
+ - 1141 :  : 'getPersonId'
+ - 1142 :  : 'setPersonId'
+ - 1143 :  : 'setAddressType'
+ - 1144 :  : 'setAddressName'
+ - 1145 :  : 'setAddressLocation'
+ - 1146 :  : 'setAddressNo'
+ - 1147 :  : 'setAddressMoo'
+ - 1148 :  : 'findRegionByFullName'
+ - 1149 :  : '(Ljava/lang/String;)LEntity/ERP_SH/VShRegion;'
+ - 1150 :  : 'getRegionId'
+ - 1151 :  : 'setAddressAreaId'
+ - 1152 :  : 'mapStringValidation'
+ - 1153 :  : 'java/util/Map'
+ - 1154 :  : 'get'
+ - 1155 :  : '(Ljava/lang/Object;)Ljava/lang/Object;'
+ - 1156 :  : 'setAddressAreaName'
+ - 1157 :  : 'setAddressStreet'
+ - 1158 :  : 'setAddressSoi'
+ - 1159 :  : 'setAddressPostal'
+ - 1160 :  : 'setAddressPhone'
+ - 1161 :  : 'setDepartmentId'
+ - 1162 :  : 'dateToBudgetYear'
+ - 1163 :  : '(Ljava/util/Date;)Ljava/lang/String;'
+ - 1164 :  : 'substring'
+ - 1165 :  : '(I)Ljava/lang/String;'
+ - 1166 :  : 'setBudgetYear'
+ - 1167 :  : 'setActorDate'
+ - 1168 :  : '(II)Ljava/lang/String;'
+ - 1169 :  : 'setPurpose'
+ - 1170 :  : 'setReceiveType'
+ - 1171 :  : 'getBigDecimalCellValueNoSetError'
+ - 1172 :  : '(Lorg/apache/poi/xssf/usermodel/XSSFCell;)Ljava/math/BigDecimal;'
+ - 1173 :  : 'setOldAmount'
+ - 1174 :  : '(Ljava/math/BigDecimal;)V'
+ - 1175 :  : 'findShBankByBankName'
+ - 1176 :  : '(Ljava/lang/String;)LEntity/ERP_SH/ShBank;'
+ - 1177 :  : 'getBankId'
+ - 1178 :  : 'setCreditCardOwner'
+ - 1179 :  : 'findAcCreditCardTypeByName'
+ - 1180 :  : '(Ljava/lang/String;)LEntity/ERP_AC/AcCreditCardType;'
+ - 1181 :  : 'getCreditCardTypeId'
+ - 1182 :  : 'setCreditCardType'
+ - 1183 :  : 'setCreditCardNo'
+ - 1184 :  : 'setCreditCardName'
+ - 1185 :  : 'setCreditCardExpYear'
+ - 1186 :  : 'setCreditCardExpMonth'
+ - 1187 :  : 'getBigDecimalCellValueSetError'
+ - 1188 :  : '(Lorg/apache/poi/xssf/usermodel/XSSFCell;Ljava/lang/Integer;)Ljava/math/BigDecimal;'
+ - 1189 :  : 'setAmount'
+ - 1190 :  : 'getIntegerCellValueSetError'
+ - 1191 :  : '(Lorg/apache/poi/xssf/usermodel/XSSFCell;I)Ljava/lang/Integer;'
+ - 1192 :  : 'setOffDate'
+ - 1193 :  : 'setBankId'
+ - 1194 :  : 'findShBankBranchByBankBranchNameAndBankId'
+ - 1195 :  : '(Ljava/lang/String;Ljava/lang/Integer;)LEntity/ERP_SH/ShBankBranch;'
+ - 1196 :  : 'getBankBranchId'
+ - 1197 :  : 'setBankBranchId'
+ - 1198 :  : 'setBankAccount'
+ - 1199 :  : 'setBankAccountName'
+ - 1200 :  : 'setOldDonateDate'
+ - 1201 :  : 'dateToshortDate'
+ - 1202 :  : 'setAddition'
+ - 1203 :  : 'setDonateMemberNo'
+ - 1204 :  : 'getDonateMemberId'
+ - 1205 :  : 'setDonateMemberId'
+ - 1206 :  : 'getAccountId'
+ - 1207 :  : 'setAccountId'
+ - 1208 :  : 'getPlanId'
+ - 1209 :  : 'setPlanId'
+ - 1210 :  : 'getSourceId'
+ - 1211 :  : 'setSourceId'
+ - 1212 :  : 'getSubAccountId'
+ - 1213 :  : '(Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;'
+ - 1214 :  : 'setSubAccountId'
+ - 1215 :  : 'setMemberNo'
+ - 1216 :  : '(Ljava/lang/String;)LEntity/ERP_SH/ShMemberType;'
+ - 1217 :  : 'setMemberTypeId'
+ - 1218 :  : '(LEntity/ERP_SH/ShMemberType;)V'
+ - 1219 :  : 'setMemberRequestId'
+ - 1220 :  : 'setMemberSource'
+ - 1221 :  : 'setDonatorId'
+ - 1222 :  : 'setDonatorRelate'
+ - 1223 :  : 'getDateCellValueSetError'
+ - 1224 :  : '(Lorg/apache/poi/xssf/usermodel/XSSFCell;I)Ljava/util/Date;'
+ - 1225 :  : 'setRegisterDate'
+ - 1226 :  : 'setMemberRequestRelationId'
+ - 1227 :  : 'setOldRegisterDate'
+ - 1228 :  : 'ZERO'
+ - 1229 :  : 'setOldTotalAmount'
+ - 1230 :  : 'setOldPaidAmount'
+ - 1231 :  : 'setOldPaidDate'
+ - 1232 :  : 'setOldPaidYear'
+ - 1233 :  : 'setOldPaidTerm'
+ - 1234 :  : 'setOldMemberNo'
+ - 1235 :  : 'isNullOrZero'
+ - 1236 :  : '(Ljava/lang/Integer;)Z'
+ - 1237 :  : 'getNewSeqNo'
+ - 1238 :  : '(Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;'
+ - 1239 :  : 'getCellValue'
+ - 1240 :  : '(Lorg/apache/poi/xssf/usermodel/XSSFCell;)Ljava/lang/Object;'
+ - 1241 :  : 'setMemberCardNo'
+ - 1242 :  : 'setMemberId'
+ - 1243 :  : '(LEntity/ERP_SH/ShMember;)V'
+ - 1244 :  : 'getStringCellValue'
+ - 1245 :  : '(LEntity/ERP_SH/ShPerson;)V'
+ - 1246 :  : 'setSeqOrder'
+ - 1247 :  : 'Entity/Enum/DocType'
+ - 1248 :  : '(Ljava/lang/String;)LEntity/Enum/DocType;'
+ - 1249 :  : 'setDocType'
+ - 1250 :  : 'setIssuer'
+ - 1251 :  : 'setDocNo'
+ - 1252 :  : 'setExpireDate'
+ - 1253 :  : 'put'
+ - 1254 :  : '(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;'
+ - 1255 :  : 'getStringFormatSetError'
+ - 1256 :  : '(Lorg/apache/poi/xssf/usermodel/XSSFCell;Ljava/lang/Integer;Ljava/lang/String;)Ljava/lang/String;'
+ - 1257 :  : name_index=1255 signature_index=1256
+ - 1258 :  : klass_index=1 name_and_type_index=1257
+ - 1259 :  : " #+1*+H'"2I-D!H@4 2 +%1 " {0xa579ca48}
+ - 1260 :  : "C@*#G " {0xa19f8840}
+ - 1261 :  : "/" {0x822c08e8}
+ - 1262 :  : " '15H " {0xa19f8808}
+ - 1263 :  : "" {0x82294170}
+ - 1264 :  : " 9I#42#H'! " {0xa19f87c0}
+ - 1265 :  : "#0@ 0@5" " {0xa2260330}
+ - 1266 :  : "#0@ *!2
+4 " {0xa22602c8}
+ - 1267 :  : "33+I2 " {0xa2260268}
+ - 1268 :  : "
+7H-1' (D") " {0xa2260200}
+ - 1269 :  : "
+7H-%2 " {0xa22601a0}
+ - 1270 :  : "2!*8% " {0xa2260148}
+ - 1271 :  : "
+7H-1' (-1$)) " {0xa22600d8}
+ - 1272 :  : "
+7H-%2 (-1$)) " {0xa2260068}
+ - 1273 :  : "2!*8% (-1$)) " {0xa225fff8}
+ - 1274 :  : "
+7H-@%H " {0xa225ff98}
+ - 1275 :  : "@-#LB# " {0xa225ff38}
+ - 1276 :  : "@-#LAL " {0xa225fed8}
+ - 1277 :  : "@-*2##2
+2# " {0xa225fe70}
+ - 1278 :  : "--B" " {0xa225fe18}
+ - 1279 :  : "@%5H " {0xa225fdc0}
+ - 1280 :  : "'15H+!-2"8 " {0xa225fd58}
+ - 1281 :  : "@( " {0xa225fca0}
+ - 1282 :  : "'1@7-5@4 " {0xa225fcf0}
+ - 1283 :  : "
+7H-5H1I/-22#/*25H  " {0xa225f4f0}
+ - 1284 :  : "
+1I5H/+I-5H " {0xa225f570}
+ - 1285 :  : "I2@%5H " {0xa225fa30}
+ - 1286 :  : "+!9H5H " {0xa225f9d8}
+ - 1287 :  : "#+1*1+'1/-3@ -/3% " {0xa225f370}
+ - 1288 :  : " " {0xa225f3e8}
+ - 1289 :  : "/-" " {0xa225f8e0}
+ - 1290 :  : "1+'1 " {0xa225f498}
+ - 1291 :  : "-3@ - " {0xa225f180}
+ - 1292 :  : "3% " {0xa225f1d8}
+ - 1293 :  : "#+1*D#)5"L " {0xa225f230}
+ - 1294 :  : "#0@( " {0xa225f318}
+ - 1295 :  : "@-#LB#*25H " {0xa225efd8}
+ - 1296 :  : "2!5H-"9H22# " {0xa225fab0}
+ - 1297 :  : "
+7H-5H1I/-22#/*25H " {0xa225f958}
+ - 1298 :  : "3!225H-"9H22# " {0xa225f688}
+ - 1299 :  : "
+7H-9I#1@-*2# " {0xa225f790}
+ - 1300 :  : "3!22
+7H-8% " {0xa225f720}
+ - 1301 :  : "I2 " {0xa225f5d8}
+ - 1302 :  : "null " {0xa225f630}
+ - 1303 :  : "#-/-" " {0xa225f438}
+ - 1304 :  : "3%/-3@ -/1+'1 " {0xa225f2a8}
+ - 1305 :  : "5H-"9H " {0xa225f040}
+ - 1306 :  : "3'@45HC
+I*44 " {0xa225f098}
+ - 1307 :  : "C@*#G#1@4%'15H " {0xa225f108}
+ - 1308 :  : "C@*#G#1@4@%H!5H " {0xa225eda8}
+ - 1309 :  : "C@*#G#1@4@%5H " {0xa225ed30}
+ - 1310 :  : "'18#0*L2##42 " {0xa225ecb8}
+ - 1311 :  : "#+1**!2
+4 " {0xa225ec58}
+ - 1312 :  : "'16I0@5" " {0xa225ef70}
+ - 1313 :  : "22#9I--1# " {0xa225ef00}
+ - 1314 :  : "#0@ 1#@#4 " {0xa225ee90}
+ - 1315 :  : "@%5H1#@#4 " {0xa225ee20}
+ - 1316 :  : "
+7H-9I7-1#@#4 " {0xa225ea20}
+ - 1317 :  : "55H1#+!-2"8 " {0xa225e9b0}
+ - 1318 :  : "@7-5H1#+!-2"8 " {0xa225e940}
+ - 1319 :  : "22#9IH2"@4 " {0xa225e8d0}
+ - 1320 :  : "*229IH2"@4 " {0xa225ebf0}
+ - 1321 :  : "@%5H1
+5@42 " {0xa225eb80}
+ - 1322 :  : "
+7H-1
+5@42 " {0xa225eb10}
+ - 1323 :  : "3'@4+1AH%0@7- " {0xa225ea98}
+ - 1324 :  : "1"-8'15H (-@7-) " {0xa225e6b8}
+ - 1325 :  : "#+1*1
+5  " {0xa225e738}
+ - 1326 :  : "#+1*+H'"2 " {0xa225e5d0}
+ - 1327 :  : "#+1*A2/B#2#/4##! " {0xa225e638}
+ - 1328 :  : "#+1*A+%H@4  " {0xa225e800}
+ - 1329 :  : "#+1*1
+5"H-"  " {0xa225e868}
+ - 1330 :  : "#+1*+H'"2  " {0xa225e798}
+ - 1331 :  : "SH_PERSON" {0xa19f8718}
+ - 1332 :  : "PERSON_ID" {0xa19f8758}
+ - 1333 :  : "SH_ADDRESS" {0xa19f85c8}
+ - 1334 :  : "ADDRESS_ID" {0xa19f8608}
+ - 1335 :  : "AC_DONATE_MEMBER" {0xa19f8668}
+ - 1336 :  : "DONATE_MEMBER_ID" {0xa19f86b0}
+ - 1337 :  : "##" {0x8929b5c0}
+ - 1338 :  : " #+1*+H'"2I-D!H@4 2 +%1 " {0xa579ca48}
+ - 1339 :  : "D" {0x822cf178}
+ - 1340 :  : "
+" {0x81f9f318}
+ - 1341 :  : "   Error : " {0xa59c7af0}
+ - 1342 :  : "   *3@#G
+" {0xa59c7ab0}
+ - 1343 :  : "ROW " {0xa59c7a80}
+ - 1344 :  : "P" {0x822bb930}
+ - 1345 :  : "N" {0x822bb9c0}
+ - 1346 :  : "CONVERT-JAVA" {0x822cf0a8}
+ - 1347 :  : " " {0x822cf208}
+ - 1348 :  : "R" {0x822cf0e8}
+ - 1349 :  : " [Gen DonateMemberNo 4%2] " {0xa59c7a18}
+
+R11=0x00000007d6899f50 is an oop
+[C 
+ - klass: {type array char}
+ - length: 171
+R12=0x0000000000000000 is an unknown value
+R13=0x000000000f5e9e30 is an unknown value
+R14=0x0000000010157090 is an unknown value
+R15=0x00000000000000b6 is an unknown value
+
+
+Stack: [0x0000000011760000,0x0000000011860000],  sp=0x000000001185e980,  free space=1018k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x1e8746]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  Import.ImportDonation.AddDoanteMember(Lorg/apache/poi/xssf/usermodel/XSSFRow;LEntity/ERP_SH/ShPerson;)LEntity/ERP_AC/AcDonateMember;+969
+j  Import.ImportDonation.threadProcess(Lorg/apache/poi/xssf/usermodel/XSSFSheet;II)V+373
+j  Import.ImportData.processData(Lorg/apache/poi/xssf/usermodel/XSSFWorkbook;Ljava/lang/String;)Ljava/util/List;+142
+j  GUI.TestGUI$13.run()V+294
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>0x0000000010336000 JavaThread "Thread-5" [_thread_in_vm, id=4308, stack(0x0000000011760000,0x0000000011860000)]
+  0x000000000d37b000 JavaThread "Swing-Shell" daemon [_thread_blocked, id=976, stack(0x000000000ecd0000,0x000000000edd0000)]
+  0x000000000ced8800 JavaThread "TimerQueue" daemon [_thread_blocked, id=516, stack(0x000000000df10000,0x000000000e010000)]
+  0x000000000cf14000 JavaThread "org.netbeans.modules.debugger.jpda.visual AWT Access Loop" daemon [_thread_blocked, id=6760, stack(0x000000000d810000,0x000000000d910000)]
+  0x0000000002098000 JavaThread "DestroyJavaVM" [_thread_blocked, id=6736, stack(0x0000000002230000,0x0000000002330000)]
+  0x000000000cf0a800 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=6756, stack(0x000000000d940000,0x000000000da40000)]
+  0x000000000c5fc000 JavaThread "AWT-Windows" daemon [_thread_in_native, id=6764, stack(0x000000000c9e0000,0x000000000cae0000)]
+  0x000000000c5f9000 JavaThread "AWT-Shutdown" [_thread_blocked, id=6680, stack(0x000000000d660000,0x000000000d760000)]
+  0x000000000c5f8800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=6724, stack(0x000000000b9b0000,0x000000000bab0000)]
+  0x000000000c471000 JavaThread "Service Thread" daemon [_thread_blocked, id=6700, stack(0x000000000cc60000,0x000000000cd60000)]
+  0x000000000c46b000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=6684, stack(0x000000000cb20000,0x000000000cc20000)]
+  0x000000000c46a000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=6688, stack(0x000000000c8d0000,0x000000000c9d0000)]
+  0x000000000aa04800 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=6824, stack(0x000000000c360000,0x000000000c460000)]
+  0x000000000aa03800 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=6808, stack(0x000000000c210000,0x000000000c310000)]
+  0x000000000a9f7800 JavaThread "JDWP Transport Listener: dt_shmem" daemon [_thread_blocked, id=6796, stack(0x000000000c090000,0x000000000c190000)]
+  0x000000000a9f1000 JavaThread "Attach Listener" daemon [_thread_blocked, id=6800, stack(0x000000000bbc0000,0x000000000bcc0000)]
+  0x000000000a9e9800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=6788, stack(0x000000000bf10000,0x000000000c010000)]
+  0x000000000a98f800 JavaThread "Finalizer" daemon [_thread_blocked, id=6784, stack(0x000000000bd20000,0x000000000be20000)]
+  0x000000000a98c000 JavaThread "Reference Handler" daemon [_thread_blocked, id=6780, stack(0x000000000bac0000,0x000000000bbc0000)]
+
+Other Threads:
+  0x000000000a988800 VMThread [stack: 0x000000000b8b0000,0x000000000b9b0000] [id=6776]
+  0x000000000aa0f800 WatcherThread [stack: 0x000000000cd60000,0x000000000ce60000] [id=6692]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 377856K, used 40351K [0x00000007d5e00000, 0x00000007fa600000, 0x0000000800000000)
+  eden space 173056K, 6% used [0x00000007d5e00000,0x00000007d68cf878,0x00000007e0700000)
+  from space 204800K, 14% used [0x00000007e0700000,0x00000007e2398388,0x00000007ecf00000)
+  to   space 202752K, 0% used [0x00000007ee000000,0x00000007ee000000,0x00000007fa600000)
+ ParOldGen       total 889344K, used 592626K [0x0000000781a00000, 0x00000007b7e80000, 0x00000007d5e00000)
+  object space 889344K, 66% used [0x0000000781a00000,0x00000007a5cbc810,0x00000007b7e80000)
+ PSPermGen       total 70656K, used 40729K [0x000000077c800000, 0x0000000780d00000, 0x0000000781a00000)
+  object space 70656K, 57% used [0x000000077c800000,0x000000077efc6618,0x0000000780d00000)
+
+Card table byte_map: [0x0000000005470000,0x0000000005890000] byte_map_base: 0x000000000188c000
+
+Polling page: 0x0000000001b60000
+
+Code Cache  [0x00000000023b0000, 0x00000000027e0000, 0x00000000053b0000)
+ total_blobs=1710 nmethods=1108 adapters=560 free_code_cache=44965Kb largest_free_block=45979584
+
+Compilation events (10 events):
+Event: 426.893 Thread 0x000000000c46b000 nmethod 1235 0x0000000002699150 code [0x0000000002699280, 0x00000000026992d8]
+Event: 426.893 Thread 0x000000000c46a000 nmethod 1236 0x0000000002698a90 code [0x0000000002698bc0, 0x0000000002698c18]
+Event: 451.303 Thread 0x000000000c46a000 1237  s          java.awt.KeyboardFocusManager::getCurrentKeyboardFocusManager (34 bytes)
+Event: 451.304 Thread 0x000000000c46a000 nmethod 1237 0x00000000027cbe50 code [0x00000000027cbfc0, 0x00000000027cc388]
+Event: 451.595 Thread 0x000000000c46a000 1238             java.awt.KeyboardFocusManager::getCurrentKeyboardFocusManager (7 bytes)
+Event: 451.597 Thread 0x000000000c46a000 nmethod 1238 0x000000000273b290 code [0x000000000273b420, 0x000000000273b8b8]
+Event: 452.915 Thread 0x000000000c46a000 1239   !         sun.awt.PostEventQueue::flush (84 bytes)
+Event: 452.917 Thread 0x000000000c46a000 nmethod 1239 0x00000000027ce710 code [0x00000000027ce860, 0x00000000027cebd8]
+Event: 631.262 Thread 0x000000000c46b000 1240             org.eclipse.persistence.descriptors.changetracking.DeferredChangeDetectionPolicy::createObjectChangeSetThroughComparison (223 bytes)
+Event: 631.277 Thread 0x000000000c46b000 nmethod 1240 0x00000000027d40d0 code [0x00000000027d4320, 0x00000000027d4f48]
+
+GC Heap History (10 events):
+Event: 14.410 GC heap before
+{Heap before GC invocations=15 (full 3):
+ PSYoungGen      total 326656K, used 64256K [0x00000007d5e00000, 0x00000007f2700000, 0x0000000800000000)
+  eden space 194048K, 0% used [0x00000007d5e00000,0x00000007d5e00000,0x00000007e1b80000)
+  from space 132608K, 48% used [0x00000007e9c00000,0x00000007edac0000,0x00000007f1d80000)
+  to   space 131584K, 0% used [0x00000007e1b80000,0x00000007e1b80000,0x00000007e9c00000)
+ ParOldGen       total 375808K, used 368858K [0x0000000781a00000, 0x0000000798900000, 0x00000007d5e00000)
+  object space 375808K, 98% used [0x0000000781a00000,0x0000000798236ad0,0x0000000798900000)
+ PSPermGen       total 51200K, used 22704K [0x000000077c800000, 0x000000077fa00000, 0x0000000781a00000)
+  object space 51200K, 44% used [0x000000077c800000,0x000000077de2c338,0x000000077fa00000)
+Event: 15.955 GC heap after
+Heap after GC invocations=15 (full 3):
+ PSYoungGen      total 326656K, used 54931K [0x00000007d5e00000, 0x00000007f2700000, 0x0000000800000000)
+  eden space 194048K, 0% used [0x00000007d5e00000,0x00000007d5e00000,0x00000007e1b80000)
+  from space 132608K, 41% used [0x00000007e9c00000,0x00000007ed1a4e00,0x00000007f1d80000)
+  to   space 131584K, 0% used [0x00000007e1b80000,0x00000007e1b80000,0x00000007e9c00000)
+ ParOldGen       total 592896K, used 375373K [0x0000000781a00000, 0x00000007a5d00000, 0x00000007d5e00000)
+  object space 592896K, 63% used [0x0000000781a00000,0x00000007988935a0,0x00000007a5d00000)
+ PSPermGen       total 49664K, used 22704K [0x000000077c800000, 0x000000077f880000, 0x0000000781a00000)
+  object space 49664K, 45% used [0x000000077c800000,0x000000077de2c238,0x000000077f880000)
+}
+Event: 16.320 GC heap before
+{Heap before GC invocations=16 (full 3):
+ PSYoungGen      total 326656K, used 248979K [0x00000007d5e00000, 0x00000007f2700000, 0x0000000800000000)
+  eden space 194048K, 100% used [0x00000007d5e00000,0x00000007e1b80000,0x00000007e1b80000)
+  from space 132608K, 41% used [0x00000007e9c00000,0x00000007ed1a4e00,0x00000007f1d80000)
+  to   space 131584K, 0% used [0x00000007e1b80000,0x00000007e1b80000,0x00000007e9c00000)
+ ParOldGen       total 592896K, used 375373K [0x0000000781a00000, 0x00000007a5d00000, 0x00000007d5e00000)
+  object space 592896K, 63% used [0x0000000781a00000,0x00000007988935a0,0x00000007a5d00000)
+ PSPermGen       total 49664K, used 22704K [0x000000077c800000, 0x000000077f880000, 0x0000000781a00000)
+  object space 49664K, 45% used [0x000000077c800000,0x000000077de2c238,0x000000077f880000)
+Event: 16.492 GC heap after
+Heap after GC invocations=16 (full 3):
+ PSYoungGen      total 325632K, used 127168K [0x00000007d5e00000, 0x00000007f6500000, 0x0000000800000000)
+  eden space 194048K, 0% used [0x00000007d5e00000,0x00000007d5e00000,0x00000007e1b80000)
+  from space 131584K, 96% used [0x00000007e1b80000,0x00000007e97b0000,0x00000007e9c00000)
+  to   space 153600K, 0% used [0x00000007ecf00000,0x00000007ecf00000,0x00000007f6500000)
+ ParOldGen       total 592896K, used 375373K [0x0000000781a00000, 0x00000007a5d00000, 0x00000007d5e00000)
+  object space 592896K, 63% used [0x0000000781a00000,0x00000007988935a0,0x00000007a5d00000)
+ PSPermGen       total 49664K, used 22704K [0x000000077c800000, 0x000000077f880000, 0x0000000781a00000)
+  object space 49664K, 45% used [0x000000077c800000,0x000000077de2c238,0x000000077f880000)
+}
+Event: 19.781 GC heap before
+{Heap before GC invocations=17 (full 3):
+ PSYoungGen      total 325632K, used 321216K [0x00000007d5e00000, 0x00000007f6500000, 0x0000000800000000)
+  eden space 194048K, 100% used [0x00000007d5e00000,0x00000007e1b80000,0x00000007e1b80000)
+  from space 131584K, 96% used [0x00000007e1b80000,0x00000007e97b0000,0x00000007e9c00000)
+  to   space 153600K, 0% used [0x00000007ecf00000,0x00000007ecf00000,0x00000007f6500000)
+ ParOldGen       total 592896K, used 375373K [0x0000000781a00000, 0x00000007a5d00000, 0x00000007d5e00000)
+  object space 592896K, 63% used [0x0000000781a00000,0x00000007988935a0,0x00000007a5d00000)
+ PSPermGen       total 49664K, used 29249K [0x000000077c800000, 0x000000077f880000, 0x0000000781a00000)
+  object space 49664K, 58% used [0x000000077c800000,0x000000077e490690,0x000000077f880000)
+Event: 20.044 GC heap after
+Heap after GC invocations=17 (full 3):
+ PSYoungGen      total 326656K, used 153584K [0x00000007d5e00000, 0x00000007fc680000, 0x0000000800000000)
+  eden space 173056K, 0% used [0x00000007d5e00000,0x00000007d5e00000,0x00000007e0700000)
+  from space 153600K, 99% used [0x00000007ecf00000,0x00000007f64fc210,0x00000007f6500000)
+  to   space 204800K, 0% used [0x00000007e0700000,0x00000007e0700000,0x00000007ecf00000)
+ ParOldGen       total 592896K, used 440662K [0x0000000781a00000, 0x00000007a5d00000, 0x00000007d5e00000)
+  object space 592896K, 74% used [0x0000000781a00000,0x000000079c855ab8,0x00000007a5d00000)
+ PSPermGen       total 49664K, used 29249K [0x000000077c800000, 0x000000077f880000, 0x0000000781a00000)
+  object space 49664K, 58% used [0x000000077c800000,0x000000077e490690,0x000000077f880000)
+}
+Event: 336.221 GC heap before
+{Heap before GC invocations=18 (full 3):
+ PSYoungGen      total 326656K, used 326640K [0x00000007d5e00000, 0x00000007fc680000, 0x0000000800000000)
+  eden space 173056K, 100% used [0x00000007d5e00000,0x00000007e0700000,0x00000007e0700000)
+  from space 153600K, 99% used [0x00000007ecf00000,0x00000007f64fc210,0x00000007f6500000)
+  to   space 204800K, 0% used [0x00000007e0700000,0x00000007e0700000,0x00000007ecf00000)
+ ParOldGen       total 592896K, used 440662K [0x0000000781a00000, 0x00000007a5d00000, 0x00000007d5e00000)
+  object space 592896K, 74% used [0x0000000781a00000,0x000000079c855ab8,0x00000007a5d00000)
+ PSPermGen       total 49664K, used 40466K [0x000000077c800000, 0x000000077f880000, 0x0000000781a00000)
+  object space 49664K, 81% used [0x000000077c800000,0x000000077ef84850,0x000000077f880000)
+Event: 336.439 GC heap after
+Heap after GC invocations=18 (full 3):
+ PSYoungGen      total 377856K, used 100022K [0x00000007d5e00000, 0x00000007fa600000, 0x0000000800000000)
+  eden space 173056K, 0% used [0x00000007d5e00000,0x00000007d5e00000,0x00000007e0700000)
+  from space 204800K, 48% used [0x00000007e0700000,0x00000007e68ad998,0x00000007ecf00000)
+  to   space 202752K, 0% used [0x00000007ee000000,0x00000007ee000000,0x00000007fa600000)
+ ParOldGen       total 592896K, used 529910K [0x0000000781a00000, 0x00000007a5d00000, 0x00000007d5e00000)
+  object space 592896K, 89% used [0x0000000781a00000,0x00000007a1f7dab8,0x00000007a5d00000)
+ PSPermGen       total 49664K, used 40466K [0x000000077c800000, 0x000000077f880000, 0x0000000781a00000)
+  object space 49664K, 81% used [0x000000077c800000,0x000000077ef84850,0x000000077f880000)
+}
+Event: 336.439 GC heap before
+{Heap before GC invocations=19 (full 4):
+ PSYoungGen      total 377856K, used 100022K [0x00000007d5e00000, 0x00000007fa600000, 0x0000000800000000)
+  eden space 173056K, 0% used [0x00000007d5e00000,0x00000007d5e00000,0x00000007e0700000)
+  from space 204800K, 48% used [0x00000007e0700000,0x00000007e68ad998,0x00000007ecf00000)
+  to   space 202752K, 0% used [0x00000007ee000000,0x00000007ee000000,0x00000007fa600000)
+ ParOldGen       total 592896K, used 529910K [0x0000000781a00000, 0x00000007a5d00000, 0x00000007d5e00000)
+  object space 592896K, 89% used [0x0000000781a00000,0x00000007a1f7dab8,0x00000007a5d00000)
+ PSPermGen       total 49664K, used 40466K [0x000000077c800000, 0x000000077f880000, 0x0000000781a00000)
+  object space 49664K, 81% used [0x000000077c800000,0x000000077ef84850,0x000000077f880000)
+Event: 339.353 GC heap after
+Heap after GC invocations=19 (full 4):
+ PSYoungGen      total 377856K, used 29280K [0x00000007d5e00000, 0x00000007fa600000, 0x0000000800000000)
+  eden space 173056K, 0% used [0x00000007d5e00000,0x00000007d5e00000,0x00000007e0700000)
+  from space 204800K, 14% used [0x00000007e0700000,0x00000007e2398388,0x00000007ecf00000)
+  to   space 202752K, 0% used [0x00000007ee000000,0x00000007ee000000,0x00000007fa600000)
+ ParOldGen       total 889344K, used 592626K [0x0000000781a00000, 0x00000007b7e80000, 0x00000007d5e00000)
+  object space 889344K, 66% used [0x0000000781a00000,0x00000007a5cbc810,0x00000007b7e80000)
+ PSPermGen       total 70656K, used 40390K [0x000000077c800000, 0x0000000780d00000, 0x0000000781a00000)
+  object space 70656K, 57% used [0x000000077c800000,0x000000077ef71978,0x0000000780d00000)
+}
+
+Deoptimization events (10 events):
+Event: 339.461 Thread 0x0000000010336000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000002699008 method=java.lang.ref.ReferenceQueue.reallyPoll()Ljava/lang/ref/Reference; @ 55
+Event: 339.461 Thread 0x0000000010336000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000002699008 method=java.lang.ref.ReferenceQueue.reallyPoll()Ljava/lang/ref/Reference; @ 55
+Event: 339.461 Thread 0x0000000010336000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000002699008 method=java.lang.ref.ReferenceQueue.reallyPoll()Ljava/lang/ref/Reference; @ 55
+Event: 339.461 Thread 0x0000000010336000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000002699008 method=java.lang.ref.ReferenceQueue.reallyPoll()Ljava/lang/ref/Reference; @ 55
+Event: 339.461 Thread 0x0000000010336000 Uncommon trap: reason=null_check action=make_not_entrant pc=0x00000000027aade4 method=javax.swing.text.AbstractDocument.calculateBidiLevels(II)[B @ 94
+Event: 339.462 Thread 0x000000000cf0a800 Uncommon trap: reason=null_check action=make_not_entrant pc=0x000000000273544c method=javax.swing.text.StyleConstants.isSuperscript(Ljavax/swing/text/AttributeSet;)Z @ 9
+Event: 426.869 Thread 0x0000000010336000 Uncommon trap: reason=unhandled action=none pc=0x0000000002609eb4 method=java.lang.String.substring(II)Ljava/lang/String; @ 30
+Event: 428.325 Thread 0x0000000010336000 Uncommon trap: reason=unhandled action=none pc=0x0000000002609eb4 method=java.lang.String.substring(II)Ljava/lang/String; @ 30
+Event: 631.286 Thread 0x0000000010336000 Uncommon trap: reason=null_check action=make_not_entrant pc=0x00000000027d4db8 method=org.eclipse.persistence.internal.sessions.UnitOfWorkChangeSet.getObjectChangeSetForClone(Ljava/lang/Object;)Lorg/eclipse/persistence/sessions/changesets/ObjectChangeSet; 
+Event: 631.291 Thread 0x0000000010336000 Uncommon trap: reason=unhandled action=none pc=0x0000000002609eb4 method=java.lang.String.substring(II)Ljava/lang/String; @ 30
+
+Internal exceptions (10 events):
+Event: 339.436 Thread 0x0000000010336000 Threw 0x00000007d6611040 at C:\re\jdk7u45\229\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 339.436 Thread 0x0000000010336000 Threw 0x00000007d6613c48 at C:\re\jdk7u45\229\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 339.436 Thread 0x0000000010336000 Threw 0x00000007d6616090 at C:\re\jdk7u45\229\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 339.436 Thread 0x0000000010336000 Threw 0x00000007d66186c8 at C:\re\jdk7u45\229\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 339.436 Thread 0x0000000010336000 Threw 0x00000007d661a510 at C:\re\jdk7u45\229\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 339.461 Thread 0x0000000010336000 Implicit null exception at 0x00000000027a59e4 to 0x00000000027aadac
+Event: 339.462 Thread 0x000000000cf0a800 Implicit null exception at 0x0000000002733394 to 0x0000000002735435
+Event: 422.711 Thread 0x0000000010336000 Threw 0x00000007d667a220 at C:\re\jdk7u45\229\hotspot\src\share\vm\interpreter\linkResolver.cpp:883
+Event: 428.334 Thread 0x0000000010336000 Threw 0x00000007d6833670 at C:\re\jdk7u45\229\hotspot\src\share\vm\interpreter\linkResolver.cpp:883
+Event: 631.286 Thread 0x0000000010336000 Implicit null exception at 0x00000000027d43d3 to 0x00000000027d4d8d
+
+Events (10 events):
+Event: 627.923 Executing VM operation: GetOrSetLocal
+Event: 627.923 Executing VM operation: GetOrSetLocal done
+Event: 630.883 Executing VM operation: GetOrSetLocal
+Event: 630.883 Executing VM operation: GetOrSetLocal done
+Event: 631.286 Thread 0x0000000010336000 Uncommon trap: trap_request=0xfffffff4 fr.pc=0x00000000027d4db8
+Event: 631.286 Thread 0x0000000010336000 DEOPT PACKING pc=0x00000000027d4db8 sp=0x000000001185e8f0
+Event: 631.286 Thread 0x0000000010336000 DEOPT UNPACKING pc=0x00000000023e75a4 sp=0x000000001185e7e8 mode 2
+Event: 631.291 Thread 0x0000000010336000 Uncommon trap: trap_request=0xffffffa7 fr.pc=0x0000000002609eb4
+Event: 631.291 Thread 0x0000000010336000 DEOPT PACKING pc=0x0000000002609eb4 sp=0x000000001185ece0
+Event: 631.291 Thread 0x0000000010336000 DEOPT UNPACKING pc=0x00000000023e75a4 sp=0x000000001185ed00 mode 2
+
+
+Dynamic libraries:
+0x000000013f660000 - 0x000000013f693000 	C:\Program Files\Java\jdk1.7.0_45\bin\java.exe
+0x0000000076de0000 - 0x0000000076f89000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000076cc0000 - 0x0000000076ddf000 	C:\Windows\system32\kernel32.dll
+0x000007fefcf20000 - 0x000007fefcf8c000 	C:\Windows\system32\KERNELBASE.dll
+0x000007fefe7b0000 - 0x000007fefe88b000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefe890000 - 0x000007fefe92f000 	C:\Windows\system32\msvcrt.dll
+0x000007fefe930000 - 0x000007fefe94f000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefeb60000 - 0x000007fefec8d000 	C:\Windows\system32\RPCRT4.dll
+0x0000000076bc0000 - 0x0000000076cba000 	C:\Windows\system32\USER32.dll
+0x000007fefd100000 - 0x000007fefd167000 	C:\Windows\system32\GDI32.dll
+0x000007fefe7a0000 - 0x000007fefe7ae000 	C:\Windows\system32\LPK.dll
+0x000007fefe2e0000 - 0x000007fefe3a9000 	C:\Windows\system32\USP10.dll
+0x000007fefb690000 - 0x000007fefb884000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_fa396087175ac9ac\COMCTL32.dll
+0x000007fefe670000 - 0x000007fefe6e1000 	C:\Windows\system32\SHLWAPI.dll
+0x000007fefd0d0000 - 0x000007fefd0fe000 	C:\Windows\system32\IMM32.DLL
+0x000007fefefe0000 - 0x000007feff0e9000 	C:\Windows\system32\MSCTF.dll
+0x0000000073b40000 - 0x0000000073c12000 	C:\Program Files\Java\jdk1.7.0_45\jre\bin\msvcr100.dll
+0x000000006a9d0000 - 0x000000006b199000 	C:\Program Files\Java\jdk1.7.0_45\jre\bin\server\jvm.dll
+0x000007fef3ec0000 - 0x000007fef3ec9000 	C:\Windows\system32\WSOCK32.dll
+0x000007fefe750000 - 0x000007fefe79d000 	C:\Windows\system32\WS2_32.dll
+0x000007fefe3b0000 - 0x000007fefe3b8000 	C:\Windows\system32\NSI.dll
+0x000007fefa9e0000 - 0x000007fefaa1b000 	C:\Windows\system32\WINMM.dll
+0x0000000076fb0000 - 0x0000000076fb7000 	C:\Windows\system32\PSAPI.DLL
+0x0000000073cb0000 - 0x0000000073cbf000 	C:\Program Files\Java\jdk1.7.0_45\jre\bin\verify.dll
+0x0000000073c80000 - 0x0000000073ca8000 	C:\Program Files\Java\jdk1.7.0_45\jre\bin\java.dll
+0x000000006b860000 - 0x000000006b895000 	C:\Program Files\Java\jdk1.7.0_45\jre\bin\jdwp.dll
+0x000000006b8d0000 - 0x000000006b8d8000 	C:\Program Files\Java\jdk1.7.0_45\jre\bin\npt.dll
+0x0000000073c60000 - 0x0000000073c75000 	C:\Program Files\Java\jdk1.7.0_45\jre\bin\zip.dll
+0x00000000715d0000 - 0x00000000715db000 	C:\Program Files\Java\jdk1.7.0_45\jre\bin\dt_shmem.dll
+0x00000000739a0000 - 0x0000000073b35000 	C:\Program Files\Java\jdk1.7.0_45\jre\bin\awt.dll
+0x000007fefcff0000 - 0x000007fefd0c7000 	C:\Windows\system32\OLEAUT32.dll
+0x000007fefe950000 - 0x000007fefeb53000 	C:\Windows\system32\ole32.dll
+0x000007fefcaf0000 - 0x000007fefcaff000 	C:\Windows\system32\CRYPTBASE.dll
+0x000007fefd350000 - 0x000007fefe0d8000 	C:\Windows\system32\SHELL32.dll
+0x000007fefb300000 - 0x000007fefb318000 	C:\Windows\system32\DWMAPI.DLL
+0x0000000073950000 - 0x0000000073996000 	C:\Program Files\Java\jdk1.7.0_45\jre\bin\fontmanager.dll
+0x0000000073c40000 - 0x0000000073c59000 	C:\Program Files\Java\jdk1.7.0_45\jre\bin\net.dll
+0x000007fefc430000 - 0x000007fefc485000 	C:\Windows\system32\mswsock.dll
+0x000007fefc420000 - 0x000007fefc427000 	C:\Windows\System32\wship6.dll
+0x0000000073c20000 - 0x0000000073c31000 	C:\Program Files\Java\jdk1.7.0_45\jre\bin\nio.dll
+0x0000000073900000 - 0x0000000073941000 	C:\Program Files\Java\jdk1.7.0_45\jre\bin\t2k.dll
+0x000007fefec90000 - 0x000007fefed29000 	C:\Windows\system32\CLBCatQ.DLL
+0x000007fefac30000 - 0x000007fefad91000 	C:\Windows\system32\WindowsCodecs.dll
+0x000007fefca90000 - 0x000007fefcae7000 	C:\Windows\system32\apphelp.dll
+0x000007fef6730000 - 0x000007fef696b000 	C:\PROGRA~1\MICROS~2\Office15\GROOVEEX.DLL
+0x000000006ebb0000 - 0x000000006ec48000 	C:\Windows\system32\MSVCP100.dll
+0x000000006eb80000 - 0x000000006ebab000 	C:\Windows\system32\ATL100.DLL
+0x000007fef6f60000 - 0x000007fef7276000 	C:\Windows\system32\msi.dll
+0x000007fef5290000 - 0x000007fef58c9000 	C:\PROGRA~1\MICROS~2\Office15\1033\GrooveIntlResource.dll
+0x000007fef6c70000 - 0x000007fef6ca5000 	C:\Windows\system32\EhStorShell.dll
+0x000007fefd170000 - 0x000007fefd347000 	C:\Windows\system32\SETUPAPI.dll
+0x000007fefcfb0000 - 0x000007fefcfe6000 	C:\Windows\system32\CFGMGR32.dll
+0x000007fefcf90000 - 0x000007fefcfaa000 	C:\Windows\system32\DEVOBJ.dll
+0x000007fefb510000 - 0x000007fefb63c000 	C:\Windows\system32\PROPSYS.dll
+0x000007fef6be0000 - 0x000007fef6c5e000 	C:\Windows\System32\cscui.dll
+0x000007fef6bd0000 - 0x000007fef6bdc000 	C:\Windows\System32\CSCDLL.dll
+0x000007fef7e70000 - 0x000007fef7e7f000 	C:\Windows\system32\CSCAPI.dll
+0x000007fef6b50000 - 0x000007fef6bd0000 	C:\Windows\system32\ntshrui.dll
+0x000007fefc6a0000 - 0x000007fefc6c3000 	C:\Windows\system32\srvcli.dll
+0x000007fefa860000 - 0x000007fefa86b000 	C:\Windows\system32\slc.dll
+0x0000000073890000 - 0x00000000738ba000 	C:\Program Files\Java\jdk1.7.0_45\jre\bin\dcpr.dll
+0x000007fef7950000 - 0x000007fef79f0000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_5.82.7601.17514_none_a4d6a923711520a9\comctl32.dll
+0x000007fefb430000 - 0x000007fefb45d000 	C:\Windows\system32\ntmarta.dll
+0x000007fefe6f0000 - 0x000007fefe742000 	C:\Windows\system32\WLDAP32.dll
+0x000007fef4850000 - 0x000007fef49ec000 	C:\Windows\system32\NetworkExplorer.dll
+0x000007fef6990000 - 0x000007fef69c4000 	C:\Windows\System32\shdocvw.dll
+0x000007fefcbc0000 - 0x000007fefcbcf000 	C:\Windows\system32\profapi.dll
+0x000007fef91b0000 - 0x000007fef91c8000 	C:\Windows\system32\MPR.dll
+0x000007fefa5b0000 - 0x000007fefa5ba000 	C:\Windows\System32\drprov.dll
+0x000007fefbfd0000 - 0x000007fefc00d000 	C:\Windows\System32\WINSTA.dll
+0x000007fefa580000 - 0x000007fefa5a2000 	C:\Windows\System32\ntlanman.dll
+0x000007fefa560000 - 0x000007fefa57c000 	C:\Windows\System32\davclnt.dll
+0x000007fefa160000 - 0x000007fefa16a000 	C:\Windows\System32\DAVHLPR.dll
+0x000007fefa410000 - 0x000007fefa425000 	C:\Windows\system32\wkscli.dll
+0x000007fefa430000 - 0x000007fefa43c000 	C:\Windows\system32\netutils.dll
+0x000007fedfab0000 - 0x000007fedfd21000 	C:\Windows\system32\wpdshext.dll
+0x000007fefaf20000 - 0x000007fefb135000 	C:\Windows\WinSxS\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.7601.17514_none_2b24536c71ed437a\gdiplus.dll
+0x000007fef7b00000 - 0x000007fef7bbd000 	C:\Windows\system32\PortableDeviceApi.dll
+0x000007fefcc80000 - 0x000007fefccba000 	C:\Windows\system32\WINTRUST.dll
+0x000007fefcd70000 - 0x000007fefced7000 	C:\Windows\system32\CRYPT32.dll
+0x000007fefcc60000 - 0x000007fefcc6f000 	C:\Windows\system32\MSASN1.dll
+0x000007fef4740000 - 0x000007fef4767000 	C:\Windows\system32\EhStorAPI.dll
+0x000007fef6980000 - 0x000007fef698c000 	C:\Windows\system32\LINKINFO.dll
+0x000000006b830000 - 0x000000006b854000 	C:\Program Files\Java\jdk1.7.0_45\jre\bin\sunec.dll
+0x000007fefb2e0000 - 0x000007fefb2f5000 	C:\Windows\system32\NLAapi.dll
+0x000007fef7a90000 - 0x000007fef7aa5000 	C:\Windows\system32\napinsp.dll
+0x000007fef7a70000 - 0x000007fef7a89000 	C:\Windows\system32\pnrpnsp.dll
+0x000007fefc2b0000 - 0x000007fefc30b000 	C:\Windows\system32\DNSAPI.dll
+0x000007fef7ad0000 - 0x000007fef7adb000 	C:\Windows\System32\winrnr.dll
+0x000000006f610000 - 0x000000006f636000 	C:\Program Files\Bonjour\mdnsNSP.dll
+0x000007fefa090000 - 0x000007fefa0b7000 	C:\Windows\system32\Iphlpapi.DLL
+0x000007fefa370000 - 0x000007fefa37b000 	C:\Windows\system32\WINNSI.DLL
+0x000007fefbdf0000 - 0x000007fefbdf7000 	C:\Windows\System32\wshtcpip.dll
+0x000007fef81c0000 - 0x000007fef81c8000 	C:\Windows\system32\rasadhlp.dll
+0x000007fef9e90000 - 0x000007fef9ee3000 	C:\Windows\System32\fwpuclnt.dll
+0x000007fef22c0000 - 0x000007fef23e5000 	C:\Windows\system32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Xdebug -Xrunjdwp:transport=dt_shmem,address=javadebug -Dfile.encoding=UTF-8 
+java_command: GUI.TestGUI
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files (x86)\Java\jdk1.6.0_29
+CLASSPATH=.;C:\PROGRA~2\IBM\SQLLIB\java\db2java.zip;C:\PROGRA~2\IBM\SQLLIB\java\db2jcc.jar;C:\PROGRA~2\IBM\SQLLIB\java\sqlj.zip;C:\PROGRA~2\IBM\SQLLIB\java\db2jcc_license_cu.jar;C:\PROGRA~2\IBM\SQLLIB\bin;C:\PROGRA~2\IBM\SQLLIB\java\common.jar
+PATH=C:\Program Files (x86)\Java\jdk1.6.0_29;C:\Windows\system32;C:\Windows;C:\Windows\system32\wbem;C:\Windows\system32\windowspowershell\v1.0\;c:\program files (x86)\toshiba\bluetooth toshiba stack\sys\;c:\program files (x86)\toshiba\bluetooth toshiba stack\sys\x64\;c:\program files (x86)\borland\starteam sdk 10.4\lib;c:\program files (x86)\borland\starteam sdk 10.4\bin;c:\program files (x86)\quicktime\qtsystem\;C:\Program Files (x86)\Java\jdk1.6.0_29\bin;c:\program files (x86)\ibm\gsk8\lib;C:\PROGRA~2\IBM\SQLLIB\BIN;C:\PROGRA~2\IBM\SQLLIB\FUNCTION;C:\PROGRA~2\IBM\SQLLIB\SAMPLES\REPL;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64
+USERNAME=tanet-t
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, erms, ht, tsc, tscinvbit, tscinv
+
+Memory: 4k page, physical 8280236k(388464k free), swap 16558620k(6319144k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (24.45-b08) for windows-amd64 JRE (1.7.0_45-b18), built on Oct  8 2013 05:47:22 by "java_re" with unknown MS VC++:1600
+
+time: Thu Nov 14 13:59:38 2013
+elapsed time: 631 seconds
+
