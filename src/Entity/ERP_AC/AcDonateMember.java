@@ -6,7 +6,7 @@
 
 package Entity.ERP_AC;
 
-import Import.ImportUtils;
+//import Import.ImportUtils;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -252,7 +252,7 @@ public class AcDonateMember implements Serializable {
     }
 
     public void setCreditCardNo(String creditCardNo) {
-        this.creditCardNo = ImportUtils.replaceCreditCardNo(creditCardNo, 16);
+        this.creditCardNo = creditCardNo;
     }
 
     public String getCreditCardExpYear() {
@@ -292,7 +292,7 @@ public class AcDonateMember implements Serializable {
     }
 
     public void setBankAccount(String bankAccount) {
-        this.bankAccount = ImportUtils.replaceCreditCardNo(bankAccount,10);
+        this.bankAccount = bankAccount;
     }
 
     public String getBankAccountName() {

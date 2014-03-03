@@ -642,12 +642,23 @@ public class ImportDonation extends ImportData{
                         try {
                             donateMember.setCreditCardType(CreditCardType.getCreditCardTypeId());
                         } catch (NullPointerException nullEx) {
+                            setErrorValueInDB(70, creditCardType);
                         }
                     }
                     
                     
                     XSSFCell cell71 = row.getCell(71);
                     String creditCardNo = getStringCellValueSetError(cell71, 71);
+                    
+                    if(!isBlankOrNull(creditCardNo) ){
+                        //return null คือผิด lenght
+                        String creditCardNoCheck = ImportUtils.replaceCreditCardNo(creditCardNo, 16);
+                        if(creditCardNoCheck == null){
+                            setErrorCustom("[ " + mapStringValidation.get(71) + "ผิดพลาด " + creditCardNo + " ]");
+                        }else{
+                            creditCardNo = creditCardNoCheck;
+                        }
+                    }
                     
                     donateMember.setCreditCardNo(creditCardNo);
 
@@ -696,6 +707,15 @@ public class ImportDonation extends ImportData{
                     
                     XSSFCell cell77 = row.getCell(77);
                     String bankAccount = getStringCellValueSetError(cell77, 77);
+                    if(!isBlankOrNull(bankAccount) ){
+                        //return null คือผิด lenght
+                        String bankAccountCheck = ImportUtils.replaceDash(bankAccount,10);
+                        if(bankAccountCheck == null){
+                            setErrorCustom("[ " + mapStringValidation.get(77) + "ผิดพลาด " + bankAccount + " ]");
+                        }else{
+                            bankAccount = bankAccountCheck;
+                        }
+                    }
                     donateMember.setBankAccount(bankAccount);
                     XSSFCell cell78 = row.getCell(78);
                     String bankAccountName = getStringCellValueSetError(cell78, 78);

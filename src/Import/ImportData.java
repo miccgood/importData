@@ -153,7 +153,6 @@ public abstract class ImportData {
             }else{
                 logln( "ROLLBACK" );
             }
-            this.commit = false;
             dao.commitTransaction(this.commit);
             cacheDao.commitTransaction(this.commit);
             dao.closeConnection();
@@ -384,11 +383,15 @@ public abstract class ImportData {
         return cell == null || cell.getCellType() == XSSFCell.CELL_TYPE_BLANK;
     }
     
-    protected void setError(Object rowCount){
+    public void setErrorCustom(String msg){
+        validationError.append(msg);
+    }
+    
+    protected void setError(Integer rowCount){
         validationError.append(" [ไม่มี ").append(mapStringValidation.get(rowCount)).append(" ] ");
     }
     
-    protected void setErrorValue(Object rowCount, String value){
+    protected void setErrorValueInDB(Integer rowCount, String value){
         validationError.append(" ไม่มี ").append(mapStringValidation.get(rowCount)).append(" [ ").append(value).append(" ] ในฐานข้อมูล ");
     }
     
