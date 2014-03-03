@@ -140,24 +140,27 @@ public abstract class ImportData {
             }
         }catch(Exception ex){
             ex.printStackTrace();
+            logln(ex.getMessage());
+            logln(ex.getStackTrace().toString());
+            this.commit = false;
         }finally{
 //            if(this.commit){
 //                loadMaxAcCounter(true);
 //                loadMaxFwSequenceGenerator(true);
 //            }
             if(this.commit){
-                logln(validationErrorList.toString()).logln("กำลัง COMMIT ข้อมูล " + lastRowNum + "Row ลงฐานข้อมูล ");
+                logln("ไม่พบข้อผิดพลาด").logln("กำลัง COMMIT ข้อมูล " + lastRowNum + "Row ลงฐานข้อมูล ");
             }else{
                 logln( "ROLLBACK" );
             }
-            
+            this.commit = false;
             dao.commitTransaction(this.commit);
             cacheDao.commitTransaction(this.commit);
             dao.closeConnection();
             cacheDao.closeConnection();
         }
         Long stop = Calendar.getInstance().getTimeInMillis()/1000;
-        logln(this.commit ? "COMMIT" : "ROLLBACK" );
+//        logln(this.commit ? "COMMIT" : "ROLLBACK" );
         logln("ใช้เวลาทั้งหมด " + ((stop - start) / 60) + " นาที " + ((stop - start) % 60) + " วินาที" );
         return validationErrorList;
     }
@@ -314,7 +317,21 @@ public abstract class ImportData {
     
     protected Integer getIntegerCellValue(XSSFCell cell) throws NullPointerException{
         try {
-            return Integer.valueOf((String)getCellValue(cell));
+            Object cellValue = getCellValue(cell);
+            if(cellValue instanceof Double){
+                Double cellValueDouble = Double.valueOf((double)cellValue);
+                return cellValueDouble.intValue();
+            }else if(cellValue instanceof String){
+                String strValue =  String.valueOf(cellValue);
+                try {
+                    return Integer.valueOf(strValue);
+                } catch (NumberFormatException  e) {
+                    return Double.valueOf(strValue).intValue();
+                }
+            }else if(cellValue instanceof Integer){
+                return (Integer)cellValue;
+            }
+            return Double.valueOf(String.valueOf(getCellValue(cell))).intValue();
         } catch (ClassCastException classCastEx){
             return Integer.valueOf((Integer)getCellValue(cell));
         }
@@ -565,6 +582,10 @@ public abstract class ImportData {
     }
     
     protected String dateToBudgetYear(Date budgetDate) {
+        
+        if(budgetDate == null){
+            budgetDate = new Date();
+        }
         Calendar c = Calendar.getInstance() ;
         c.setTime(budgetDate);
         int mount = c.get(Calendar.MONTH);

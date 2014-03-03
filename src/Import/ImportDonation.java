@@ -27,6 +27,7 @@ import Entity.Enum.SexType;
 import GUI.TestGUI;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -588,6 +589,9 @@ public class ImportDonation extends ImportData{
         
         XSSFCell cell63 = row.getCell(63);
         Date oldDonateDate = getDateCellValueIsNotEmptySetError(cell63, 63);
+        if(oldDonateDate == null){
+            oldDonateDate = new Date();
+        }
         String budgetYear = dateToBudgetYear(oldDonateDate);
         try{
             subBudgetYear = budgetYear.substring(2);
@@ -757,24 +761,48 @@ public class ImportDonation extends ImportData{
         donateMemberAccount.setDonateMemberId(donateMember.getDonateMemberId());
         XSSFCell cell81 = row.getCell(81);
         String accountFullCode = getStringCellValueSetError(cell81, 81);
-        Integer accountId = getAccountId(accountFullCode);
+        Integer accountId = null;
+        if(!isBlankOrNull(accountFullCode)){
+            accountId = getAccountId(accountFullCode);
+        }
         donateMemberAccount.setAccountId(accountId);
+        
         XSSFCell cell82 = row.getCell(82);
         String departmentFullCode = getStringCellValueSetError(cell82, 82);
-        Integer departmentId = getDepartmentId(departmentFullCode);
+        Integer departmentId = null;
+        if(!isBlankOrNull(departmentFullCode)){
+            departmentId = getDepartmentId(departmentFullCode);
+        }
         donateMemberAccount.setDepartmentId(departmentId);
+        
+        
         XSSFCell cell83 = row.getCell(83);
         String planFullCode = getStringCellValueSetError(cell83, 83);
-        Integer planId = getPlanId(planFullCode);
+        Integer planId = null;
+        if(!isBlankOrNull(planFullCode)){
+            planId = getPlanId(planFullCode);
+        }
         donateMemberAccount.setPlanId(planId);
+        
+        
         XSSFCell cell84 = row.getCell(84);
         String sourceFullCode = getStringCellValueSetError(cell84, 84);
-        Integer sourceId = getSourceId(sourceFullCode);
+        Integer sourceId = null;
+         if(!isBlankOrNull(sourceFullCode)){
+            sourceId = getSourceId(sourceFullCode);
+        }
         donateMemberAccount.setSourceId(sourceId);
+        
+        
         XSSFCell cell85 = row.getCell(85);
         String subAccountFullCode = getStringCellValueNoSetError(cell85);
-        Integer subAccountId = getSubAccountId(subAccountFullCode, departmentId, sourceId);
+        Integer subAccountId = null;
+         if(!isBlankOrNull(subAccountFullCode)){
+            subAccountId = getSubAccountId(subAccountFullCode, departmentId, sourceId);
+        }
         donateMemberAccount.setSubAccountId(subAccountId);
+        
+        
         donateMemberAccount.setIsCancel(STRING_N);
         donateMemberAccount.setIsLockUpdate(STRING_N);
         donateMemberAccount.setCreateTime(NOW);
@@ -810,8 +838,11 @@ public class ImportDonation extends ImportData{
             validationError.append(" [Gen MemberNo ผิดพลาด] ");
         }
         XSSFCell cell1 = row.getCell(1);
-        String memberTypeName = getStringCellValueNoSetError(cell1);
+        String memberTypeName = getStringCellValueSetError(cell1, 1);
         ShMemberType findShMemberTypeByName = cacheDao.findShMemberTypeByNameCache(memberTypeName);
+        if(findShMemberTypeByName == null){
+            setError(1);
+        }
         member.setMemberTypeId(findShMemberTypeByName);
         member.setMemberRequestId(null);
         
