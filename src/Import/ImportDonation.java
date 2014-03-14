@@ -10,6 +10,7 @@ import Entity.ERP_AC.AcCounter;
 import Entity.ERP_AC.AcCreditCardType;
 import Entity.ERP_AC.AcDonateMember;
 import Entity.ERP_AC.AcDonateMemberAccount;
+import Entity.ERP_AC.AcDonateMemberStatus;
 import Entity.ERP_SH.ShAddress;
 import Entity.ERP_SH.ShBank;
 import Entity.ERP_SH.ShBankBranch;
@@ -606,7 +607,10 @@ public class ImportDonation extends ImportData{
         donateMember.setActorDate(oldDonateDate);
         
         donateMember.setPersonId(person.getPersonId());
-        
+        Integer personId = donateMember.getPersonId();
+        if(donateMember.getPersonId() == null || donateMember.getPersonId() == 0){
+            personId = donateMember.getPersonId();
+        }
         XSSFCell cell66 = row.getCell(66);
         String purPose = getStringCellValueNoSetError(cell66);
         try{
@@ -771,9 +775,31 @@ public class ImportDonation extends ImportData{
              validationError.append(" [Gen DonateMemberNo ผิดพลาด] ");
         }
         cacheDao.addEntity(donateMember);
+        this.addDonateMemberStatus(donateMember.getDonateMemberId());
+//        logln("ได้ donateMemberId " + donateMember.getDonateMemberId()+ "\n");
         return donateMember;
     }
 
+    private void addDonateMemberStatus (Integer donateMemberId){
+        AcDonateMemberStatus acDonateMemberStatus = new AcDonateMemberStatus();
+        acDonateMemberStatus.setDonateMemberId(donateMemberId);
+        acDonateMemberStatus.setStatus("N");
+        acDonateMemberStatus.setCheckResult(null);
+        acDonateMemberStatus.setLastCheckDate(null);
+        
+        acDonateMemberStatus.setCreateTime(NOW);
+        acDonateMemberStatus.setCreateUserId(CREATE_USER_ID);
+        acDonateMemberStatus.setCreateProg(CREATE_PROG);
+        
+        acDonateMemberStatus.setLastUpdTime(NOW);
+        acDonateMemberStatus.setLastUpdUserId(CREATE_USER_ID);
+        acDonateMemberStatus.setLastUpdProg(CREATE_PROG);
+        acDonateMemberStatus.setLastUpdVersion(1);
+        
+        
+        cacheDao.addEntity(acDonateMemberStatus);
+    }
+    
     private AcDonateMemberAccount AddDoanteMemberAccount(XSSFRow row, ShPerson person, AcDonateMember donateMember) {
         AcDonateMemberAccount donateMemberAccount = new AcDonateMemberAccount();
 //        

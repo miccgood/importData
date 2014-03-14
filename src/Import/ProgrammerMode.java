@@ -56,6 +56,10 @@ public class ProgrammerMode extends ImportData{
         cacheDao.closeConnection();
         return null;
     }
+    
+    private void calBudgetYear(){
+        
+    }
 
     private void getHeader(XSSFSheet sheet){
         XSSFRow row = sheet.getRow(1);
@@ -92,6 +96,8 @@ public class ProgrammerMode extends ImportData{
 
     @Override
     protected void threadProcess(XSSFSheet sheet, int index, int lastRowNum) {
+        
+        this.loadMaxFwSequenceGenerator(true);
     }
     
     

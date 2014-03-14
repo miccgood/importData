@@ -45,7 +45,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "ShSubAccount.findByLastUpdProg", query = "SELECT s FROM ShSubAccount s WHERE s.lastUpdProg = :lastUpdProg"),
     @NamedQuery(name = "ShSubAccount.findByLastUpdVersion", query = "SELECT s FROM ShSubAccount s WHERE s.lastUpdVersion = :lastUpdVersion"),
     @NamedQuery(name = "ShSubAccount.findByBusinessUnitId", query = "SELECT s FROM ShSubAccount s WHERE s.businessUnitId = :businessUnitId"),
-    @NamedQuery(name = "ShSubAccount.findBySourceId", query = "SELECT s FROM ShSubAccount s WHERE s.sourceId = :sourceId")})
+    @NamedQuery(name = "ShSubAccount.findBySourceId", query = "SELECT s FROM ShSubAccount s WHERE s.sourceId = :sourceId"),
+    @NamedQuery(name = "ShSubAccount.findByDepartmentIdAndSourceId", query = "SELECT s FROM ShSubAccount s WHERE s.subAccountId = :fullCode AND s.departmentId = :departmentId AND s.sourceId = :sourceId")})
 public class ShSubAccount implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id

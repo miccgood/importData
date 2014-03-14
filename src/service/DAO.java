@@ -502,7 +502,7 @@ public class DAO {
         Query query = entityManager.createNativeQuery(sql, ShSubAccount.class);
         query.setParameter(1, fullCode);
         query.setParameter(2, departmentId);
-        query.setParameter(2, sourceId);
+        query.setParameter(3, sourceId);
         query.setFlushMode(FlushModeType.COMMIT);
         return query.getResultList();
     }
@@ -576,5 +576,9 @@ public class DAO {
         query.getSingleResult();
     }
   
+    public List testQuery(String sql) {
+        Query query = entityManager.createNativeQuery(sql);
+        return query.getResultList();
+    }
 }
 

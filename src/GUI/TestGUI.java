@@ -157,6 +157,12 @@ public class TestGUI extends javax.swing.JFrame {
         host = new javax.swing.JTextField();
         resultTestConnection = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        Query = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        clearBtn1 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        sqlInput = new javax.swing.JTextArea();
         progressBar = new javax.swing.JProgressBar();
 
         jMenu1.setText("jMenu1");
@@ -185,6 +191,16 @@ public class TestGUI extends javax.swing.JFrame {
 
         jTabbedPane1.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+        jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane1MouseClicked(evt);
+            }
+        });
+        jTabbedPane1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane1StateChanged(evt);
+            }
+        });
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel2.setAutoscrolls(true);
@@ -286,15 +302,8 @@ public class TestGUI extends javax.swing.JFrame {
                             .addComponent(jLabel7))
                         .addGap(23, 23, 23)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(136, 136, 136)
-                                .addComponent(processBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(stopBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(fileNameComboBox)
-                            .addComponent(sheetName, 0, 655, Short.MAX_VALUE))
+                            .addComponent(sheetName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(browseBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -307,6 +316,14 @@ public class TestGUI extends javax.swing.JFrame {
                         .addComponent(enableLogError)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(251, 251, 251)
+                .addComponent(processBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(stopBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -396,7 +413,7 @@ public class TestGUI extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(database)
                             .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(319, Short.MAX_VALUE))
+                .addContainerGap(335, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -418,10 +435,55 @@ public class TestGUI extends javax.swing.JFrame {
                     .addComponent(testConnection)
                     .addComponent(jLabel1)
                     .addComponent(resultTestConnection, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("การเชื่อมต่อ", jPanel3);
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        Query.setText("Query");
+        Query.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                QueryMouseClicked(evt);
+            }
+        });
+
+        clearBtn1.setText("Clear");
+
+        sqlInput.setColumns(20);
+        sqlInput.setRows(5);
+        sqlInput.setEnabled(false);
+        jScrollPane2.setViewportView(sqlInput);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Query, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(clearBtn1)
+                .addContainerGap())
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 842, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Query)
+                        .addComponent(clearBtn1)))
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("SQL Test", jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -433,193 +495,24 @@ public class TestGUI extends javax.swing.JFrame {
                     .addComponent(progressBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1)
                     .addComponent(jTabbedPane1))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         getAccessibleContext().setAccessibleDescription("CDGS Import Data");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void browseBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browseBtnMouseClicked
-        JFileChooser fileChooser = new JFileChooser();
-//        fileChooser.setCurrentDirectory(new java.io.File("."));
-        fileChooser.setFileFilter(new FileFilter() {
-            @Override
-            public boolean accept(File f) {
-                return f.isDirectory() || f.getName().endsWith(".xls") || f.getName().endsWith(".xlsx") || f.getName().endsWith(".xlsm");
-            }
-
-            @Override
-            public String getDescription() {
-                return "Excel File";   
-            }
-        });
-        fileChooser.setAcceptAllFileFilterUsed(true);
-        fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-        fileChooser.setDialogTitle("Chooser Excel File ...");
-
-        
-        if (fileChooser.showOpenDialog(fileNameComboBox) == JFileChooser.APPROVE_OPTION) { 
-            diableForm();
-            file = fileChooser.getSelectedFile();
-            TestGUI.fileName = file.getName();
-            fileNameComboBox.setText(fileName);
-//            try {
-//                FileInputStream fileInput = new FileInputStream(file);
-//            } catch (FileNotFoundException ex) {
-//                Logger.getLogger(TestGUI.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-            getSheetName();
-        }
-    }//GEN-LAST:event_browseBtnMouseClicked
-
-    private void browseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_browseBtnActionPerformed
-
-    private void fileNameComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileNameComboBoxActionPerformed
-        if("comboBoxChanged".equals(evt.getActionCommand())){
-            String newSelected = fileNameComboBox.getSelectedText();
-            if(!newSelected.equals(selected)){
-                selected = fileNameComboBox.getSelectedText();
-                XSSFSheet sheet = workbook.getSheet(selected);
-                int lastRowNum = sheet.getLastRowNum();
-                log.setText(selected + " มีข้อมูลทั้งหมด " + lastRowNum + " แถว\n");
-                setModeProcess(false);
-            }
-            
-        }
-    }//GEN-LAST:event_fileNameComboBoxActionPerformed
-
-    private void sheetNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sheetNameActionPerformed
-        if("comboBoxChanged".equals(evt.getActionCommand())){
-            String newSelected = String.valueOf(sheetName.getSelectedItem());
-            if(!newSelected.equals(selected)){
-                selected = String.valueOf(sheetName.getSelectedItem());
-                XSSFSheet sheet = workbook.getSheet(selected);
-                int lastRowNum = sheet.getLastRowNum();
-                log.setText(selected + " มีข้อมูลทั้งหมด " + lastRowNum + " แถว\n");
-                setModeProcess(false);
-            }
-            
-        }
-    }//GEN-LAST:event_sheetNameActionPerformed
-
-    private void modeComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modeComboBoxActionPerformed
-        if("comboBoxChanged".equals(evt.getActionCommand())){
-            String newSelected = String.valueOf(modeComboBox.getSelectedItem());
-            if(!newSelected.equals(selected)){
-                this.modeSelected = String.valueOf(modeComboBox.getSelectedItem());
-//                outln("เลือก Mode " + modeSelected);
-            }
-            
-        }
-    }//GEN-LAST:event_modeComboBoxActionPerformed
-
-    private void processBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_processBtnMouseClicked
-        
-        if(!processBtn.isEnabled())return;
-        processThread = new Thread(){
-            @Override
-            public void run() {
-                progressBar.setValue(0);
-                progressBar.setStringPainted(true);
-                
-                setModeProcess(true);
-                CategoryData categoryData = CategoryData.valueOf(String.valueOf(modeComboBox.getSelectedItem()));
-                String modeSelected = categoryData.getType();
-                try {
-                    switch (modeSelected){
-
-                        case "Capital" : {
-                            importData = new ImportCapital();
-                            break ;
-                        }
-                        case "Donation" : {
-                            importData = new ImportDonation();
-                            break ;
-                        } 
-                        case "Donation2" : {
-                            importData = new ImportDonationtt();
-                            break ;
-                        } 
-                        case "Guarantee" : {
-                            importData = new ImportGuarantee();
-                            break ;
-                        } 
-                        case "ProgrammerMode" : {
-                            importData = new ProgrammerMode();
-                            break ;
-                        } 
-                        default: {
-                            outln("Error");
-                        }
-                    }
-
-                    List<StringBuffer> validateErrorList = importData.processData(workbook, selected);
-                    if(importData.getStop()){
-                        processThread = null;
-                    }else{
-                        errorFileName = TextFile.write(file, validateErrorList);
-                        setModeProcess(false);
-                        
-                        if(JOptionPane.showConfirmDialog(getThis(),"ต้องการเปิดไฟล์ผลการประมวลผลหรือไม่ ?") == 0){
-                            openFile(errorFileName);
-                        } 
-                    }
-                    
-                } catch (PersistenceException e) {
-                    e.printStackTrace();
-                    log.append("เกิดข้อผิดพลาดการเชื่อมต่อฐานข้อมูล\n");
-                    log.append(e.getMessage());
-                    setModeProcess(false);
-                } catch (Exception ex){
-                    ex.printStackTrace();
-                    log.append("เกิดข้อผิดพลาด\n");
-                    setModeProcess(false);
-                } finally {
-                    
-                }
-            }
-        };
-        processThread.start();
-    }//GEN-LAST:event_processBtnMouseClicked
-
-    private void processBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_processBtnActionPerformed
-
-    private void stopBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_stopBtnMouseClicked
-        if(!stopBtn.isEnabled())return;
-        if(Thread.State.RUNNABLE.equals(processThread.getState())){
-            importData.setStop(true);
-            setModeProcess(false);
-//            try {
-//                Thread.sleep(100);
-//            } catch (InterruptedException ex) {
-//                Logger.getLogger(TestGUI.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-            outln("หยุดการทำงาน");
-            progressBar.setValue(0);
-            progressBar.setStringPainted(false);
-        }
-    }//GEN-LAST:event_stopBtnMouseClicked
-
-    private void stopBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_stopBtnActionPerformed
 
     private void testConnectionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_testConnectionMouseClicked
         progressBar.setValue(0);
@@ -653,19 +546,243 @@ public class TestGUI extends javax.swing.JFrame {
                 } finally {
                     progressBar.setIndeterminate(false);
                 }
-               
+
             }
         }.start();
     }//GEN-LAST:event_testConnectionMouseClicked
+
+    private void enableLogErrorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enableLogErrorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enableLogErrorActionPerformed
+
     private void clearBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearBtnMouseClicked
         log.setText(null);
         progressBar.setValue(0);
         progressBar.setStringPainted(false);
     }//GEN-LAST:event_clearBtnMouseClicked
 
-    private void enableLogErrorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enableLogErrorActionPerformed
+    private void stopBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_enableLogErrorActionPerformed
+    }//GEN-LAST:event_stopBtnActionPerformed
+
+    private void stopBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_stopBtnMouseClicked
+        if(!stopBtn.isEnabled())return;
+        if(Thread.State.RUNNABLE.equals(processThread.getState())){
+            importData.setStop(true);
+            setModeProcess(false);
+            //            try {
+                //                Thread.sleep(100);
+                //            } catch (InterruptedException ex) {
+                //                Logger.getLogger(TestGUI.class.getName()).log(Level.SEVERE, null, ex);
+                //            }
+            outln("หยุดการทำงาน");
+            progressBar.setValue(0);
+            progressBar.setStringPainted(false);
+        }
+    }//GEN-LAST:event_stopBtnMouseClicked
+
+    private void processBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_processBtnActionPerformed
+
+    private void processBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_processBtnMouseClicked
+
+        if(!processBtn.isEnabled())return;
+        processThread = new Thread(){
+            @Override
+            public void run() {
+                progressBar.setValue(0);
+                progressBar.setStringPainted(true);
+
+                setModeProcess(true);
+                CategoryData categoryData = CategoryData.valueOf(String.valueOf(modeComboBox.getSelectedItem()));
+                String modeSelected = categoryData.getType();
+                try {
+                    switch (modeSelected){
+
+                        case "Capital" : {
+                            importData = new ImportCapital();
+                            break ;
+                        }
+                        case "Donation" : {
+                            importData = new ImportDonation();
+                            break ;
+                        }
+                        case "Donation2" : {
+                            importData = new ImportDonationtt();
+                            break ;
+                        }
+                        case "Guarantee" : {
+                            importData = new ImportGuarantee();
+                            break ;
+                        }
+                        case "ProgrammerMode" : {
+                            importData = new ProgrammerMode();
+                            break ;
+                        }
+                        default: {
+                            outln("Error");
+                        }
+                    }
+
+                    List<StringBuffer> validateErrorList = importData.processData(workbook, selected);
+                    if(importData.getStop()){
+                        processThread = null;
+                    }else{
+                        errorFileName = TextFile.write(file, validateErrorList);
+                        setModeProcess(false);
+
+                        if(JOptionPane.showConfirmDialog(getThis(),"ต้องการเปิดไฟล์ผลการประมวลผลหรือไม่ ?") == 0){
+                            openFile(errorFileName);
+                        }
+                    }
+
+                } catch (PersistenceException e) {
+                    e.printStackTrace();
+                    log.append("เกิดข้อผิดพลาดการเชื่อมต่อฐานข้อมูล\n");
+                    log.append(e.getMessage());
+                    setModeProcess(false);
+                } catch (Exception ex){
+                    ex.printStackTrace();
+                    log.append("เกิดข้อผิดพลาด\n");
+                    setModeProcess(false);
+                } finally {
+
+                }
+            }
+        };
+        processThread.start();
+    }//GEN-LAST:event_processBtnMouseClicked
+
+    private void modeComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modeComboBoxActionPerformed
+        if("comboBoxChanged".equals(evt.getActionCommand())){
+            String newSelected = String.valueOf(modeComboBox.getSelectedItem());
+            if(!newSelected.equals(selected)){
+                this.modeSelected = String.valueOf(modeComboBox.getSelectedItem());
+                //                outln("เลือก Mode " + modeSelected);
+            }
+
+        }
+    }//GEN-LAST:event_modeComboBoxActionPerformed
+
+    private void sheetNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sheetNameActionPerformed
+        if("comboBoxChanged".equals(evt.getActionCommand())){
+            String newSelected = String.valueOf(sheetName.getSelectedItem());
+            if(!newSelected.equals(selected)){
+                selected = String.valueOf(sheetName.getSelectedItem());
+                XSSFSheet sheet = workbook.getSheet(selected);
+                int lastRowNum = sheet.getLastRowNum();
+                log.setText(selected + " มีข้อมูลทั้งหมด " + lastRowNum + " แถว\n");
+                setModeProcess(false);
+            }
+
+        }
+    }//GEN-LAST:event_sheetNameActionPerformed
+
+    private void fileNameComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileNameComboBoxActionPerformed
+        if("comboBoxChanged".equals(evt.getActionCommand())){
+            String newSelected = fileNameComboBox.getSelectedText();
+            if(!newSelected.equals(selected)){
+                selected = fileNameComboBox.getSelectedText();
+                XSSFSheet sheet = workbook.getSheet(selected);
+                int lastRowNum = sheet.getLastRowNum();
+                log.setText(selected + " มีข้อมูลทั้งหมด " + lastRowNum + " แถว\n");
+                setModeProcess(false);
+            }
+
+        }
+    }//GEN-LAST:event_fileNameComboBoxActionPerformed
+
+    private void browseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_browseBtnActionPerformed
+
+    private void browseBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browseBtnMouseClicked
+        JFileChooser fileChooser = new JFileChooser();
+        //        fileChooser.setCurrentDirectory(new java.io.File("."));
+        fileChooser.setFileFilter(new FileFilter() {
+            @Override
+            public boolean accept(File f) {
+                return f.isDirectory() || f.getName().endsWith(".xls") || f.getName().endsWith(".xlsx") || f.getName().endsWith(".xlsm");
+            }
+
+            @Override
+            public String getDescription() {
+                return "Excel File";
+            }
+        });
+        fileChooser.setAcceptAllFileFilterUsed(true);
+        fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+        fileChooser.setDialogTitle("Chooser Excel File ...");
+
+        if (fileChooser.showOpenDialog(fileNameComboBox) == JFileChooser.APPROVE_OPTION) {
+            diableForm();
+            file = fileChooser.getSelectedFile();
+            TestGUI.fileName = file.getName();
+            fileNameComboBox.setText(fileName);
+            //            try {
+                //                FileInputStream fileInput = new FileInputStream(file);
+                //            } catch (FileNotFoundException ex) {
+                //                Logger.getLogger(TestGUI.class.getName()).log(Level.SEVERE, null, ex);
+                //            }
+            getSheetName();
+        }
+    }//GEN-LAST:event_browseBtnMouseClicked
+
+    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+
+    }//GEN-LAST:event_jTabbedPane1MouseClicked
+
+    private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
+        if(jTabbedPane1.getSelectedIndex() == 2){
+            log.setText("ปิดปรับรุง");
+            progressBar.setValue(0);
+            progressBar.setStringPainted(false);
+            log.setEditable(false);
+        }
+        log.setText(null);
+        progressBar.setValue(0);
+        progressBar.setStringPainted(false);
+        log.setEditable(false);
+    }//GEN-LAST:event_jTabbedPane1StateChanged
+
+    private void QueryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_QueryMouseClicked
+        progressBar.setValue(0);
+        progressBar.setStringPainted(false);
+        new Thread(){
+            @Override
+            public void run() {
+                progressBar.setIndeterminate(true);
+                resultTestConnection.setText("");
+                try {
+                    DAO testDao = new DAO();
+                    try {
+                        String sql = sqlInput.getText();
+                        List list = testDao.testQuery(sql);
+                        resultTestConnection.setText("ค้นหาข้อมูลสำเร็จ");
+                        resultTestConnection.setForeground(Color.blue);
+                    } catch (PersistenceException e) {
+                        resultTestConnection.setText("ค้นหาข้อมูลไม่สำเร็จ");
+                        resultTestConnection.setForeground(Color.red);
+                    }finally {
+                        testDao.closeConnection();
+                        progressBar.setIndeterminate(false);
+                    }
+                } catch (PersistenceException e) {
+                    String message = e.getMessage();
+                    if(message.contains("Error Code: -4214")){
+                        resultTestConnection.setText("User/Pass ผิด");
+                    }else{
+                        resultTestConnection.setText("เชื่อมต่อไม่สำเร็จ");
+                    }
+                    resultTestConnection.setForeground(Color.red);
+                } finally {
+                    progressBar.setIndeterminate(false);
+                }
+
+            }
+        }.start();
+    }//GEN-LAST:event_QueryMouseClicked
 
     /**
      * @param args the command line arguments
@@ -697,8 +814,10 @@ public class TestGUI extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Query;
     private javax.swing.JButton browseBtn;
     private javax.swing.JButton clearBtn;
+    private javax.swing.JButton clearBtn1;
     private javax.swing.JTextField database;
     private javax.swing.JCheckBox enableLog;
     private javax.swing.JCheckBox enableLogError;
@@ -707,6 +826,7 @@ public class TestGUI extends javax.swing.JFrame {
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -716,7 +836,9 @@ public class TestGUI extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea log;
     private javax.swing.JComboBox modeComboBox;
@@ -725,6 +847,7 @@ public class TestGUI extends javax.swing.JFrame {
     private javax.swing.JProgressBar progressBar;
     private javax.swing.JLabel resultTestConnection;
     private javax.swing.JComboBox sheetName;
+    private javax.swing.JTextArea sqlInput;
     private javax.swing.JButton stopBtn;
     private javax.swing.JButton testConnection;
     private javax.swing.JTextField username;
@@ -877,129 +1000,6 @@ protected void processSheet(StylesTable styles, ReadOnlySharedStringsTable strin
         try {  
             
             workbook = new XSSFWorkbook(fileInputStream);
-//            parseExcel(file);
-  
-//            HSSFWorkbook hsfWorkbook = new HSSFWorkbook();  
-//  
-//            org.apache.poi.ss.usermodel.Sheet hsfSheet = hsfWorkbook.createSheet();  
-//  
-//            Sheet sheetToRead = workbook.getSheet(0, false);  
-//  
-//            SheetRowReader reader = sheetToRead.newReader();  
-//            Cell[] row;  
-//            int rowPos = 0;  
-//            while ((row = reader.readRow()) != null) {  
-//                org.apache.poi.ss.usermodel.Row hfsRow = hsfSheet.createRow(rowPos);  
-//                int cellPos = 0;  
-//                for (Cell cell : row) {  
-//                    if(cell != null){  
-//                        org.apache.poi.ss.usermodel.Cell hfsCell = hfsRow.createCell(cellPos);  
-//                        hfsCell.setCellType(org.apache.poi.ss.usermodel.Cell.CELL_TYPE_STRING);  
-//                        hfsCell.setCellValue(cell.getValue());  
-//                    }  
-//                    cellPos++;  
-//                }  
-//                rowPos++;  
-//            }  
-//            return hsfSheet;  
-//            
-            
-            
-            
-            
-//            int size = fileInputStream.available() / 2;
-//            BufferedInputStream bis = new BufferedInputStream(fileInputStream);
-//            
-//            FileInputStream fis = null;
-// 
-//		try {
-//			fis = new FileInputStream(file);
-// 
-//			System.out.println("Total file size to read (in bytes) : "
-//					+ fis.available());
-//                        
-//			int content;
-//			while ((content = fis.read()) != -1) {
-//				// convert to char and display it
-////				System.out.println((byte) content);
-//			}
-// 
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		} finally {
-//			try {
-//				if (fis != null)
-//					fis.close();
-//			} catch (IOException ex) {
-//				ex.printStackTrace();
-//			}
-//		}
-//                
-//                
-//                
-//            long fileLength = file.length();
-//            byte buffer[] = new byte[8];
-//            fileInputStream.read(buffer, 0, (int) fileLength);
-//            
-//            OPCPackage pkg = OPCPackage.open(fileInputStream);
-             // XSSFWorkbook, File
-//            OPCPackage pkg = OPCPackage.openOrCreate(file);
-//            WorkbookFactory.create(pkg);
-            
-//            XSSFReader reader = new XSSFReader(pkg);
-//            XSSFWorkbook fWorkbook = new Fil(reader.getWorkbookData());
-//            ReadExcelFile.ProcessExcelSheet(pkg, 0, null, 0);
-            
-//        ReadOnlySharedStringsTable sharedStrings = new ReadOnlySharedStringsTable(pkg);
-//        XSSFReader xssfReader = new XSSFReader(pkg);
-//
-//        StylesTable styles = xssfReader.getStylesTable();
-//        XSSFReader.SheetIterator iter = (XSSFReader.SheetIterator) xssfReader.getSheetsData();
-//        int index = 0;
-//        while (iter.hasNext()) {
-//            InputStream stream = iter.next();
-//            if(index==0)
-//            {            
-//                ExcelWorkSheetHandler mySheetContentsHandler = new ExcelWorkSheetHandler(ExcelWorkSheetHandler.class, null);
-//                ContentHandler handler = new XSSFSheetXMLHandler(styles, sharedStrings, mySheetContentsHandler, true);
-//
-//                XMLReader parser = XMLReaderFactory.createXMLReader();
-//                parser.setContentHandler(handler);
-//                parser.parse(new InputSource(xssfReader.getSheetsData().next()));
-//                
-//                
-//                
-//                InputSource sheetSource = new InputSource(stream);
-//                SAXParserFactory saxFactory = SAXParserFactory.newInstance();
-//                SAXParser saxParser = saxFactory.newSAXParser();
-//                XMLReader sheetParser = saxParser.getXMLReader();
-//                ContentHandler handler = new XSSFSheetXMLHandler(styles, strings, sheetSource, true);
-////                ContentHandler handler = new XSSFSheetHandler(styles, strings, 0, System.out);
-//                sheetParser.setContentHandler(handler);
-//                sheetParser.parse(sheetSource);
-//            }
-//            stream.close();
-//            ++index;
-//        }
-        
-        
-        
-            
-//            InputStream workbookData = reader.getWorkbookData();
-//            workbookData.
-//            StylesTable styles = reader.getStylesTable();
-//            ReadOnlySharedStringsTable sharedStrings = new ReadOnlySharedStringsTable(pkg);
-//            
-//            SXSSFWorkbook sXSSFWorkbook = new SXSSFWorkbook();
-//            sXSSFWorkbook.createSheet()
-            
-//            ContentHandler handler = new XSSFSheetXMLHandler(styles, sharedStrings, mySheetContentsHandler, true);
-//
-//            XMLReader parser = XMLReaderFactory.createXMLReader();
-//            parser.setContentHandler(handler);
-//            parser.parse(new InputSource(reader.getSheetsData().next()));
-
-
         } catch (POIXMLException e) {
            HSSFWorkbook hssfWorkbook = new HSSFWorkbook(fileInputStream);
            workbook = XSSFConvert.convertWorkbookHSSFToXSSF(hssfWorkbook);

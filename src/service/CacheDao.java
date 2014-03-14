@@ -127,7 +127,7 @@ public class CacheDao {
     
     public void addEntity(Object entity){
         entityManager.persist(entity);
-//        entityManager.flush();
+        entityManager.flush();
     }
     
     public ShFormType findShFormTypeByFormTypeCode(String formTypeCode) {

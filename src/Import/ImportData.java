@@ -493,7 +493,7 @@ public abstract class ImportData {
     protected Integer getSubAccountId(String SubAccountFullCode, Integer departmentrId, Integer sourceId) {
         List<ShSubAccount> subAccountList = dao.getSubAccountByFullCode(SubAccountFullCode, departmentrId, sourceId);
         if(isNullOrEmpty(subAccountList)){
-            validationError.append(" [ไม่มี ").append("รหัสแหล่งเงิน ").append(SubAccountFullCode).append(" ในฐานข้อมูล").append(" ] ");
+            validationError.append(" [ไม่มี ").append("รหัสบัญชีย่อย ").append(SubAccountFullCode).append(" ในฐานข้อมูล").append(" ] ");
             return null;
         }
         return subAccountList.get(0).getSubAccountId();
