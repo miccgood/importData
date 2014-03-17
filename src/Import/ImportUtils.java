@@ -46,4 +46,24 @@ public class ImportUtils {
         }
         
     }
+    
+    
+    public static String subString(String inputString, int lengthInput, boolean returnNull){
+        try{
+            int length = inputString.length();
+            
+            //ถ้าความยาวตัวอักษรInputยาวกว่า ที่ต้อง ให้ตัดทิ้ง
+            if(length > lengthInput){
+                return (returnNull ? null : inputString.substring(0, lengthInput));
+            } else {
+                //ถ้าความยาวตัวอักษรInput น้อยกว่า = ที่ต้องการให้ใช้  ความยาว input
+                return inputString.substring(0, length);
+            }
+        } catch (NullPointerException nullEx){
+            return "";
+        }
+        
+    }
+    
+    
 }

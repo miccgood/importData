@@ -671,11 +671,48 @@ public class ImportDonation extends ImportData{
                     
                     donateMember.setCreditCardName(creditCardName);
                     XSSFCell cell73 = row.getCell(73);
-                    String creditCardExpYear = getStringCellValueNoSetError(cell73);
-                    donateMember.setCreditCardExpYear(creditCardExpYear);
+                    final String creditCardExpYear = getStringCellValueNoSetError(cell73);
+                    
+                    
+                    //ถ้ามีค่าต้องตรวจสอบถ้าไม่มีให้ข้ามไป
+                    if(creditCardExpYear != null && !"".equals(creditCardExpYear)){
+                        try {
+                            
+                            
+                            Integer creditCardExpYearInteger = Integer.valueOf(creditCardExpYear);
+                            Calendar calendar = Calendar.getInstance();
+                            int year = calendar.get(Calendar.YEAR);
+                            //ตรวจสอบค่าว่าต้องอยูาใน 2000 ถึง 2050 หรือ +- ไม่เกิน 10ปี
+                            if(( creditCardExpYearInteger > 2050 || creditCardExpYearInteger < 2000 ) 
+                                    || ( creditCardExpYearInteger < (year + 10) && creditCardExpYearInteger > (year - 10) ) 
+                              ){
+                                setErrorCustom(73,creditCardExpYear + "ไม่อยู่ในช่วง 2000 ถึง 2050");
+                            }
+                        } catch (Exception e) {
+                            setErrorCustom(73, "ผิดพลาด " + creditCardExpYear);
+                        }
+                    }
+                    
+                    donateMember.setCreditCardExpYear(ImportUtils.subString(creditCardExpYear, 4, true));
                     XSSFCell cell74 = row.getCell(74);
-                    String creditCardExpMonth = getStringCellValueNoSetError(cell74);
-                    donateMember.setCreditCardExpMonth(creditCardExpMonth);
+                    final String creditCardExpMonth = getStringCellValueNoSetError(cell74);
+                    
+                    
+                    //ถ้ามีค่าต้องตรวจสอบถ้าไม่มีให้ข้ามไป
+                    if(creditCardExpMonth != null && !"".equals(creditCardExpMonth)){
+                        try {
+                            Integer creditCardExpMonthInteger = Integer.valueOf(creditCardExpMonth);
+                            //ตรวจสอบค่าว่าต้องอยูาใน 1 ถึง 12
+                            if(creditCardExpMonthInteger > 12 || creditCardExpMonthInteger < 1){
+                                setErrorCustom(74,creditCardExpMonth + "ไม่อยู่ในช่วง 1 ถึง 12");
+                            }
+                        } catch (Exception e) {
+                            setErrorCustom(73, "ผิดพลาด " + creditCardExpMonth);
+                        }
+                    }
+                    
+                    
+                    donateMember.setCreditCardExpMonth(ImportUtils.subString(creditCardExpMonth, 2, true));
                     XSSFCell cell79 = row.getCell(79);
                     BigDecimal amount = getBigDecimalCellValueSetError(cell79, 79);
                     donateMember.setAmount(amount);
@@ -775,17 +812,22 @@ public class ImportDonation extends ImportData{
              validationError.append(" [Gen DonateMemberNo ผิดพลาด] ");
         }
         cacheDao.addEntity(donateMember);
-        this.addDonateMemberStatus(donateMember.getDonateMemberId());
+        this.addDonateMemberStatus(donateMember);
 //        logln("ได้ donateMemberId " + donateMember.getDonateMemberId()+ "\n");
         return donateMember;
     }
 
-    private void addDonateMemberStatus (Integer donateMemberId){
+    private void addDonateMemberStatus (AcDonateMember donateMember){
         AcDonateMemberStatus acDonateMemberStatus = new AcDonateMemberStatus();
-        acDonateMemberStatus.setDonateMemberId(donateMemberId);
-        acDonateMemberStatus.setStatus("N");
+//        acDonateMemberStatus.setDonateMemberStatusId(1);
+        acDonateMemberStatus.setBusinessUnitId(donateMember.getBusinessUnitId());
+        acDonateMemberStatus.setDonateMemberId(donateMember.getDonateMemberId());
+        acDonateMemberStatus.setStatus(STRING_N);
         acDonateMemberStatus.setCheckResult(null);
         acDonateMemberStatus.setLastCheckDate(null);
+        
+        acDonateMemberStatus.setIsCancel(STRING_N);
+        acDonateMemberStatus.setIsLockUpdate(STRING_N);
         
         acDonateMemberStatus.setCreateTime(NOW);
         acDonateMemberStatus.setCreateUserId(CREATE_USER_ID);

@@ -26,6 +26,7 @@
     <class>Entity.ERP_AC.AcDonateMember</class>
     <class>Entity.ERP_AC.AcDonateMemberAccount</class>
     <class>Entity.ERP_AC.AcDonateMemberRequest</class>
+    <class>Entity.ERP_AC.AcDonateMemberStatus</class>
     <class>Entity.ERP_FI.FiCapital</class>
     <class>Entity.ERP_FI.FiCapitalFounder</class>
     <class>Entity.ERP_FI.FiFund</class>

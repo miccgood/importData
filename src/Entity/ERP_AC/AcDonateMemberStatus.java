@@ -11,21 +11,31 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author tanet-t
  */
+
 @Entity
 @Table(name = "AC_DONATE_MEMBER_STATUS")
-@XmlRootElement
+@TableGenerator(
+	name="counter_ac_donate_member_status", 
+	table="AC_COUNTER", 
+	pkColumnName="name", 
+	valueColumnName="value", 
+	pkColumnValue="AC_DONATE_MEMBER_STATUS", 
+	initialValue=1, 
+	allocationSize=10)
 @NamedQueries({
     @NamedQuery(name = "AcDonateMemberStatus.findAll", query = "SELECT a FROM AcDonateMemberStatus a"),
     @NamedQuery(name = "AcDonateMemberStatus.findByDonateMemberStatusId", query = "SELECT a FROM AcDonateMemberStatus a WHERE a.donateMemberStatusId = :donateMemberStatusId"),
@@ -50,6 +60,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class AcDonateMemberStatus implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy=GenerationType.TABLE, generator="counter_ac_donate_member_status")
     @Basic(optional = false)
     @Column(name = "DONATE_MEMBER_STATUS_ID")
     private Integer donateMemberStatusId;

@@ -387,6 +387,10 @@ public abstract class ImportData {
         validationError.append(msg);
     }
     
+    public void setErrorCustom(Integer rowCount, String msg){
+        validationError.append(mapStringValidation.get(rowCount)).append(msg).append(" ");
+    }
+    
     protected void setError(Integer rowCount){
         validationError.append(" [ไม่มี ").append(mapStringValidation.get(rowCount)).append(" ] ");
     }

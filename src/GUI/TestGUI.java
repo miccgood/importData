@@ -157,12 +157,6 @@ public class TestGUI extends javax.swing.JFrame {
         host = new javax.swing.JTextField();
         resultTestConnection = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        Query = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        clearBtn1 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        sqlInput = new javax.swing.JTextArea();
         progressBar = new javax.swing.JProgressBar();
 
         jMenu1.setText("jMenu1");
@@ -435,78 +429,33 @@ public class TestGUI extends javax.swing.JFrame {
                     .addComponent(testConnection)
                     .addComponent(jLabel1)
                     .addComponent(resultTestConnection, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("การเชื่อมต่อ", jPanel3);
-
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-
-        Query.setText("Query");
-        Query.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                QueryMouseClicked(evt);
-            }
-        });
-
-        clearBtn1.setText("Clear");
-
-        sqlInput.setColumns(20);
-        sqlInput.setRows(5);
-        sqlInput.setEnabled(false);
-        jScrollPane2.setViewportView(sqlInput);
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Query, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(clearBtn1)
-                .addContainerGap())
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 842, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Query)
-                        .addComponent(clearBtn1)))
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("SQL Test", jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(progressBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jTabbedPane1))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(progressBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
         );
 
         getAccessibleContext().setAccessibleDescription("CDGS Import Data");
@@ -746,44 +695,6 @@ public class TestGUI extends javax.swing.JFrame {
         log.setEditable(false);
     }//GEN-LAST:event_jTabbedPane1StateChanged
 
-    private void QueryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_QueryMouseClicked
-        progressBar.setValue(0);
-        progressBar.setStringPainted(false);
-        new Thread(){
-            @Override
-            public void run() {
-                progressBar.setIndeterminate(true);
-                resultTestConnection.setText("");
-                try {
-                    DAO testDao = new DAO();
-                    try {
-                        String sql = sqlInput.getText();
-                        List list = testDao.testQuery(sql);
-                        resultTestConnection.setText("ค้นหาข้อมูลสำเร็จ");
-                        resultTestConnection.setForeground(Color.blue);
-                    } catch (PersistenceException e) {
-                        resultTestConnection.setText("ค้นหาข้อมูลไม่สำเร็จ");
-                        resultTestConnection.setForeground(Color.red);
-                    }finally {
-                        testDao.closeConnection();
-                        progressBar.setIndeterminate(false);
-                    }
-                } catch (PersistenceException e) {
-                    String message = e.getMessage();
-                    if(message.contains("Error Code: -4214")){
-                        resultTestConnection.setText("User/Pass ผิด");
-                    }else{
-                        resultTestConnection.setText("เชื่อมต่อไม่สำเร็จ");
-                    }
-                    resultTestConnection.setForeground(Color.red);
-                } finally {
-                    progressBar.setIndeterminate(false);
-                }
-
-            }
-        }.start();
-    }//GEN-LAST:event_QueryMouseClicked
-
     /**
      * @param args the command line arguments
      */
@@ -814,10 +725,8 @@ public class TestGUI extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Query;
     private javax.swing.JButton browseBtn;
     private javax.swing.JButton clearBtn;
-    private javax.swing.JButton clearBtn1;
     private javax.swing.JTextField database;
     private javax.swing.JCheckBox enableLog;
     private javax.swing.JCheckBox enableLogError;
@@ -826,7 +735,6 @@ public class TestGUI extends javax.swing.JFrame {
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -836,9 +744,7 @@ public class TestGUI extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea log;
     private javax.swing.JComboBox modeComboBox;
@@ -847,7 +753,6 @@ public class TestGUI extends javax.swing.JFrame {
     private javax.swing.JProgressBar progressBar;
     private javax.swing.JLabel resultTestConnection;
     private javax.swing.JComboBox sheetName;
-    private javax.swing.JTextArea sqlInput;
     private javax.swing.JButton stopBtn;
     private javax.swing.JButton testConnection;
     private javax.swing.JTextField username;
